@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1686071378 source:c:\users\pc\onedrive\escritorio\gamelab1\dados\main.cpp
+	<iostream>
+
+1686254434 source:c:\users\pc\onedrive\escritorio\gamelab1\dados\funtiondados.cpp
+	<iostream>
+	"rlutil.h"
+	"dados.h"
+	<cstdlib>
+
+1686073999 c:\users\pc\onedrive\escritorio\gamelab1\dados\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1686254413 source:c:\users\pc\onedrive\escritorio\gamelab1\dados\dadoss.cpp
+	<iostream>
+	<iostream>
+	"rlutil.h"
+	"dados.h"
+
+1686128337 c:\users\pc\onedrive\escritorio\gamelab1\dados\dados.h
+
