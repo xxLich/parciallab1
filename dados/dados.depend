@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1686658002 source:c:\users\pc\onedrive\escritorio\dadosromanos\dados\dados.cpp
+	<iostream>
+	"rlutil.h"
+	"dados.h"
+
+1686651674 c:\users\pc\onedrive\escritorio\dadosromanos\dados\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1686654207 c:\users\pc\onedrive\escritorio\dadosromanos\dados\dados.h
+
+1686658058 source:c:\users\pc\onedrive\escritorio\dadosromanos\dados\main.cpp
+	<iostream>
+	"rlutil.h"
+	"dados.h"
+
