@@ -3,14 +3,7 @@
 #include "Menu.h"
 #include "dado.h"
 #include "credito.h"
-#include <thread>
-#include <fstream>
-#ifdef _WIN32
-#include <Windows.h>
-#else
-#include <unistd.h>
-#endif
-#include "structuras.h"
+
 
 using namespace std;
 void pintar(const char* text, int posx, int posy, bool selected){
@@ -27,8 +20,6 @@ else{
     rlutil::setBackgroundColor(rlutil::COLOR::BLACK);
 
 }
-
-
 
 
 

@@ -2,7 +2,7 @@
 #include "rlutil.h"
 #include "Menu.h"
 #include "dado.h"
-#include "structuras.h"
+
 using namespace std;
 
 
@@ -26,6 +26,8 @@ void dibujarDados(int numero,int posX,int posY){
 }
 
 
+
+
 void dibujarPuntos(int numero,int posX,int posY){
 
     rlutil::setColor(rlutil::COLOR::BLACK);
@@ -35,6 +37,8 @@ void dibujarPuntos(int numero,int posX,int posY){
 case 1:
     rlutil::locate(posX+3,posY+1);
     cout<<(char)254;
+
+
 
     break;
 case 2:

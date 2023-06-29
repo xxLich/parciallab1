@@ -1,6 +1,6 @@
-#include<iostream>
+#include <iostream>
 #include "rlutil.h"
-#include "Menu.h"
+#include "mesa.h"
 #include "dado.h"
 #include <string>
 #include <cstdlib>
@@ -12,7 +12,11 @@
 
 using namespace std;
 
+
+
+
 void llenarVectorDados(jugadores[]);
+
 void seleccionarEstatuilla(int, jugadores[], estatuas);
 
 void datosEnJuego(jugadores[]);
@@ -912,7 +916,7 @@ void dosJugadores()
                                     Mmedusa=true;
                                     tiro2=true;
 
-                                    dibujarEstatuilla(vJugadores);
+                                    dibujarEstatuilla(estatuillas);
                                 }
                                 else
                                 {
@@ -1132,45 +1136,6 @@ void dosJugadores()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ///--------------------- Funcion 2 vJugadores SI LAB1 ----------------------------------
 
 
@@ -1210,6 +1175,7 @@ void LAB1 ()
     while(salir != 0);
 
 }
+
 
 
 

@@ -1,12 +1,12 @@
 #ifndef STRUCTURAS_H_INCLUDED
 #define STRUCTURAS_H_INCLUDED
-#include "string"
 #include <string>
-using namespace std;
+
+
 struct estatuas
 {
 
-    string vEstatuillas[5] = {"1.cangrejo","2.hormiga","3.medusa","4.aguila","5.salamandra"};
+    std::string vEstatuillas[5] = {"1.cangrejo","2.hormiga","3.medusa","4.aguila","5.salamandra"};
     bool vEstatuillasDisponibles[5] =
     {
 
@@ -23,8 +23,8 @@ struct estatuas
 struct jugadores
 {
 
-    string nombre;
-    string vEstatuillas[5] = {"|cangrejo|","|hormiga|","|medusa|","|aguila|","|salamandra|"};
+    std::string nombre;
+    std::string vEstatuillas[5] = {"|cangrejo|","|hormiga|","|medusa|","|aguila|","|salamandra|"};
     bool vEstatuillasObtenidas[5] =
     {
 
@@ -37,8 +37,8 @@ struct jugadores
 
     int dados[5];
     int puntos = 0;
-
     bool turnoPrimero = false;
+
     bool bendicionCangrejo = false;
     bool bendicionHormiga = false;
     bool bendicionMedusa = false;
@@ -48,7 +48,5 @@ struct jugadores
 
 
 };
-
-
 
 #endif // STRUCTURAS_H_INCLUDED

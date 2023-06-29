@@ -1,18 +1,8 @@
 #ifndef LOGICA-DOS-JUGADORES_H_INCLUDED
 #define LOGICA-DOS-JUGADORES_H_INCLUDED
-#include<iostream>
-#include "rlutil.h"
-#include "Menu.h"
-#include "dado.h"
-#include <string>
-#include <cstdlib>
-#include <ctime>
-#include "mesa.h"
-#include "mesaydados.h"
-#include "structuras.h"
 
 
-using namespace std;
+
 
 
 /// estatuillas
@@ -36,16 +26,11 @@ bool medusa_tres(int d1 , int d2, int d3);
 
 bool aguila_tres(int d1, int d2, int d3);
 
+void lanzarCincoDadosSeisCaras(jugadores[],int);
 
+void lanzarDosDadosDiezCaras(jugadores[],int);
 
-
-
-
-
-
-
-
-
+void lanzarTresDadosDiezCaras(jugadores[],int)
 
 
 

@@ -1,6 +1,5 @@
-#include<iostream>
+#include <iostream>
 #include "rlutil.h"
-#include "Menu.h"
 #include "dado.h"
 #include <string>
 #include <cstdlib>
@@ -9,7 +8,10 @@
 #include "mesaydados.h"
 #include "Logica-dos-jugadores.h"
 #include "structuras.h"
+
 using namespace std;
+
+
 
 
 
@@ -34,152 +36,6 @@ void mostrarDatosJugadorUno(jugadores []);
 void mostrarDatosJugadorDos(jugadores []);
 
 
-
-
-
-
-
-
-/*
-
-void seleccionarEstatuilla(int seleccion, jugadores vJugadores[2], estatuas estatuillas)
-{
-
-
-    switch(seleccion)
-    {
-
-
-    case 1:
-
-
-            /// si la estatuilla esta disponible
-        if(estatuillas.vEstatuillasDisponibles[seleccion-1])
-        {
-
-            cout<<"Seleccionaste :"<<estatuillas.vEstatuillas[seleccion-1];
-
-
-
-            /// si selecciona y lanza el jugador 1
-
-            if(vJugadores[0].turnoPrimero)
-            {
-
-
-
-
-                if(cangrejo( vJugadores[0].vdados[0],vJugadores[0].vdados[1]))
-                {
-
-                    cout<<"Ganaste la estatuilla del cangrejo";
-
-                    estatuillas.vEstatuillasDisponibles[seleccion-1]=false;
-                    vJugadores[0].vEstatuillasObtenidas[seleccion-1]=true;
-                    vJugadores[0].maldicionCangrejo = true;
-                    cambiarTurnos(vJugadores);
-
-                    break;
-
-
-                }
-                else
-                {
-
-                    cout<<"No ganaste la estatuilla";
-                    cambiarTurnos(vJugadores);
-
-                }
-            }
-            else
-            {
-
-
-                /// si selecciona y lanza el jugador 2
-
-
-                if(cangrejo(vJugadores[1].vdados[0],vJugadores[1].vdados[1]))
-                {
-
-                    cout<<"Ganaste la estatuilla del cangrejo";
-
-                    estatuillas.vEstatuillasDisponibles[seleccion-1]=false;
-                    vJugadores[1].vEstatuillasObtenidas[seleccion-1]=true;
-                    vJugadores[1].maldicionCangrejo = true;
-                    cambiarTurnos(vJugadores);
-
-                    break;
-
-                }
-                else
-                {
-
-                    cout<<"No ganaste la estatuilla del cangrejo";
-                    cambiarTurnos(vJugadores);
-
-                }
-            }
-
-
-            /// si la estatuilla seleccionada no esta disponible
-
-        }
-        else
-        {
-
-            cout<<"Seleccione una estatuilla disponible"<<endl;
-
-        }
-
-        break;
-
-
-
-    case 2:
-
-        cout<<"Seleccionaste :"<<estatuillas.vEstatuillas[seleccion-1];
-
-
-        break;
-
-
-    case 3:
-
-        cout<<"Seleccionaste :"<<estatuillas.vEstatuillas[seleccion-1];
-
-
-        break;
-
-
-
-    case 4:
-
-        cout<<"Seleccionaste :"<<estatuillas.vEstatuillas[seleccion-1];
-
-
-        break;
-
-
-
-    case 5:
-
-        cout<<"Seleccionaste :"<<estatuillas.vEstatuillas[seleccion-1];
-
-
-
-
-
-        break;
-
-    default:
-
-        cout<<"SELECCIONE OTRA"<<endl;
-
-    }
-
-}
-
-*/
 
 
 /// Pide nombre a cada jugador y lo almacena
@@ -412,7 +268,7 @@ void cambiarTurnos(jugadores vJugadores[2])
 }
 ///Lan dados
 
-void lanzarDosDadosDiezCaras(jugador vJugadores[2],int nroJugador)
+void lanzarDosDadosDiezCaras(jugadores vJugadores[2],int nroJugador)
 {
 
     dosDadosDiezCaras(vJugadores,nroJugador);
@@ -463,11 +319,11 @@ void jugarPorTurno(jugadores vJugadores[2])
 
 
         datosEnJuego(vJugadores);
-        mesa(30,5);
+        mesa();
 
 
         rlutil::anykey();
-        dado10Caras(30,5,dado1);
+        dado10Caras(dado1);
 
 
         Sleep(1000);
@@ -483,7 +339,7 @@ void jugarPorTurno(jugadores vJugadores[2])
 
 
         rlutil::anykey();
-        dado10Caras(30,5,dado2);
+        dado10Caras(dado2);
 
         Sleep(1000);
 
@@ -592,32 +448,6 @@ bool salamandra(int d1, int d2)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /// OBTENCION DE ESTATUILLAS 3 DADOS **********************************
 
 
@@ -664,6 +494,5 @@ bool aguila_tres(int d1, int d2, int d3)
     }
     return 0;
 }
-
 
 
