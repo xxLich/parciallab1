@@ -46,6 +46,7 @@
 		<Unit filename="mesa.h" />
 		<Unit filename="mesaydados.h" />
 		<Unit filename="rlutil.h" />
+		<Unit filename="structuras.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

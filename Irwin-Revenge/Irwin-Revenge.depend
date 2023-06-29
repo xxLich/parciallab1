@@ -109,3 +109,114 @@
 	"mesaydados.h"
 	"Logica-dos-jugadores.h"
 
+1688068157 source:c:\users\pc\onedrive\escritorio\parciallab1-main\irwin-revenge\creditos.cpp
+	<iostream>
+	<chrono>
+	<thread>
+	"credito.h"
+
+1688021823 c:\users\pc\onedrive\escritorio\parciallab1-main\irwin-revenge\credito.h
+
+1688067661 source:c:\users\pc\onedrive\escritorio\parciallab1-main\irwin-revenge\dados.cpp
+	<iostream>
+	"rlutil.h"
+	"Menu.h"
+	"dado.h"
+	"structuras.h"
+
+1688021823 c:\users\pc\onedrive\escritorio\parciallab1-main\irwin-revenge\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1688068022 c:\users\pc\onedrive\escritorio\parciallab1-main\irwin-revenge\menu.h
+	<iostream>
+	"rlutil.h"
+	"Menu.h"
+	"dado.h"
+	<string>
+
+1688068022 c:\users\pc\onedrive\escritorio\parciallab1-main\irwin-revenge\dado.h
+	<iostream>
+	"rlutil.h"
+	"Menu.h"
+	"dado.h"
+
+1688021823 source:c:\users\pc\onedrive\escritorio\parciallab1-main\irwin-revenge\dos-jugadores.cpp
+	<iostream>
+	"rlutil.h"
+	"Menu.h"
+	"dado.h"
+	<string>
+	<cstdlib>
+	<ctime>
+	"mesa.h"
+	"mesaydados.h"
+	"Logica-dos-jugadores.h"
+
+1688021823 c:\users\pc\onedrive\escritorio\parciallab1-main\irwin-revenge\mesa.h
+
+1688021823 c:\users\pc\onedrive\escritorio\parciallab1-main\irwin-revenge\mesaydados.h
+
+1688021823 c:\users\pc\onedrive\escritorio\parciallab1-main\irwin-revenge\logica-dos-jugadores.h
+	<iostream>
+	"rlutil.h"
+	"Menu.h"
+	"dado.h"
+	<string>
+	<cstdlib>
+	<ctime>
+	"mesa.h"
+	"mesaydados.h"
+
+1688021823 source:c:\users\pc\onedrive\escritorio\parciallab1-main\irwin-revenge\funcionesmesaydados.cpp
+	<iostream>
+	"mesaydados.h"
+	"rlutil.h"
+	"dado.h"
+
+1688021823 source:c:\users\pc\onedrive\escritorio\parciallab1-main\irwin-revenge\logica-dos-jugadores.cpp
+	<iostream>
+	"rlutil.h"
+	"Menu.h"
+	"dado.h"
+	<string>
+	<cstdlib>
+	<ctime>
+	"mesa.h"
+	"mesaydados.h"
+	"Logica-dos-jugadores.h"
+
+1688067889 source:c:\users\pc\onedrive\escritorio\parciallab1-main\irwin-revenge\main.cpp
+	<iostream>
+	"rlutil.h"
+	"Menu.h"
+	"dado.h"
+	<windows.h>
+	"structuras.h"
+
+1688067889 source:c:\users\pc\onedrive\escritorio\parciallab1-main\irwin-revenge\menu.cpp
+	<iostream>
+	"rlutil.h"
+	"Menu.h"
+	"dado.h"
+	"credito.h"
+	<thread>
+	<fstream>
+	<Windows.h>
+	<unistd.h>
+	"structuras.h"
+
+1688067717 c:\users\pc\onedrive\escritorio\parciallab1-main\irwin-revenge\structuras.h
+	"string"
+	<string>
+

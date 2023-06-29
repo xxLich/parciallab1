@@ -3,6 +3,7 @@
 #include "Menu.h"
 #include "dado.h"
 #include <windows.h>
+#include "structuras.h"
 
 
 using namespace std;

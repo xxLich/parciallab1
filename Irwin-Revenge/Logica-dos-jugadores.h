@@ -9,6 +9,8 @@
 #include <ctime>
 #include "mesa.h"
 #include "mesaydados.h"
+#include "structuras.h"
+
 
 using namespace std;
 

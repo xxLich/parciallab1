@@ -8,56 +8,11 @@
 #include "mesa.h"
 #include "mesaydados.h"
 #include "Logica-dos-jugadores.h"
+#include "structuras.h"
 
 using namespace std;
 
-
-struct estatuas
-{
-
-    string vEstatuillas[5] = {"1.cangrejo","2.hormiga","3.medusa","4.aguila","5.salamandra"};
-    bool vEstatuillasDisponibles[5] =
-    {
-
-        true, ///0 cangrejo
-        true, ///1 hormiga
-        true, ///2 medusa
-        true, ///3 aguila
-        true  ///4 salamandra
-    };
-
-
-};
-
-struct jugadores
-{
-
-    string nombre;
-    string vEstatuillas[5] = {"|cangrejo|","|hormiga|","|medusa|","|aguila|","|salamandra|"};
-    bool vEstatuillasObtenidas[5] =
-    {
-
-        false, ///0 cangrejo
-        false, ///1 hormiga
-        false, ///2 medusa
-        false, ///3 aguila
-        false  ///4 salamandra
-    };
-
-    int dados[5];
-    int puntos = 0;
-
-    bool bendicionCangrejo = false;
-    bool bendicionHormiga = false;
-    bool bendicionMedusa = false;
-    bool bendicionAguila = false;
-    bool bendicionSalamandra = false;
-
-
-
-};
-
-
+void llenarVectorDados(jugadores[]);
 void seleccionarEstatuilla(int, jugadores[], estatuas);
 
 void datosEnJuego(jugadores[]);
@@ -267,22 +222,7 @@ void dosJugadores()
 ///*****************************
 
                                 /// llena los vectores de dados de los 2 jugadores
-                                void llenarVectorDados(jugadores vJugadores[2])
-                                {
-
-                                    srand(time(0));
-
-                                    for(int i=0; i<5; i++)
-                                    {
-
-                                        vJugadores[0].dados[i]= 1+ (rand()%10);
-                                        vJugadores[1].dados[i]= 1+ (rand()%10);
-                                    }
-
-                                }
-
-
-
+                                llenarVectorDados(vJugadores);
 
                                 cout << "Tire dado: ";
                                 cin >> vJugadores[0].dados[0];
@@ -293,57 +233,6 @@ void dosJugadores()
 
                                 /// lanzar dados
 
-                                void lanzarDosDadosDiezCaras(jugador vJugadores[2],int nroJugador)
-                                {
-
-
-
-                                         int  posX, posY;
-
-                                    for(int i=0; i<2; i++)
-                                    {
-
-
-
-
-
-                                        dado10Caras(posX,posY,vJugadores[nroJugador].dados[i]);
-
-                                    }
-
-                                }
-
-
-                                void lanzarTresDadosDiezCaras(jugadores vJugadores[2], int nroJugador)
-                                {
-                                          int  posX, posY;
-
-                                    for(int i=0; i<3; i++)
-                                    {
-
-
-                                        dado10Caras(posX,posY,vJugadores[nroJugador].dados[i]);
-
-                                    }
-
-
-
-                                }
-
-
-                                void lanzarCincoDadosSeisCaras(jugadores vJugadores[2],int nroJugador){
-
-                                    int  posX, posY;
-
-                                    for(int i=0;i<5;i++){
-
-
-
-                                        cincoDadosSeisCaras(posX,posY,vJugadores[nroJugador].dados[i]);
-                                    }
-
-
-                                }
 
 
 ///******************************

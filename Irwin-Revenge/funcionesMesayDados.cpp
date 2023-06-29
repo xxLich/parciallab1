@@ -2,48 +2,44 @@
 #include "mesaydados.h"
 #include "rlutil.h"
 #include "dado.h"
+#include "structuras.h"
 using namespace std;
 
 
 
-
-
-
 ///DADO DE 10 CARAS
-void dado10Caras(int posX,int posY,int dado){
-    mesa(posX, posY);
+void dado10Caras(int dado){
+    mesa();
     dibujarDados(dado,55,12);
 }
 
-///DOS DADOS DE SEIS CARAS
-void dosDadosSeisCaras(int posX,int posY,int dadoUno,int dadoDos){
-
-    mesa(posX, posY);
-    dibujarDados(dadoUno,50,12);
-    dibujarDados(dadoDos,60,12);
+///DOS DADOS DE DIEZ CARAS
+void dosDadosDiezCaras(jugadores vJugadores[2],int numeroJugador){
+    mesa();
+    dibujarDados(vJugadores[numeroJugador].dados[0],50,12);
+    dibujarDados(vJugadores[numeroJugador].dados[1],60,12);
 }
-///TRES DADOS DE SEIS CARAS
-void tresDadosSeisCaras(int posX,int posY,int dado){
-    mesa(posX, posY);
-    dibujarDados(dado,45,12);
-    dibujarDados(dado,55,12);
-    dibujarDados(dado,65,12);
+///TRES DADOS DE DIEZ CARAS
+void tresDadosDiezCaras(jugadores vJugadores[2],int numeroJugador){
+    mesa();
+    dibujarDados(vJugadores[numeroJugador].dados[0],45,12);
+    dibujarDados(vJugadores[numeroJugador].dados[1],55,12);
+    dibujarDados(vJugadores[numeroJugador].dados[2],65,12);
 }
 
 ///CINCO DADOS DE SEIS CARAS
-void cincoDadosSeisCaras(int posX,int posY,int dado){
-    mesa(posX, posY);
-    dibujarDados(dado,35,12);
-    dibujarDados(dado,45,12);
-    dibujarDados(dado,55,12);
-    dibujarDados(dado,65,12);
-    dibujarDados(dado,75,12);
+void cincoDadosSeisCaras(jugadores vJugadores[2],int numeroJugador){
+    mesa();
+    dibujarDados(vJugadores[numeroJugador].dados[0],35,12);
+    dibujarDados(vJugadores[numeroJugador].dados[1],45,12);
+    dibujarDados(vJugadores[numeroJugador].dados[2],55,12);
+    dibujarDados(vJugadores[numeroJugador].dados[3],65,12);
+    dibujarDados(vJugadores[numeroJugador].dados[4],75,12);
 }
 
-void mesa(int posX, int posY){
-
-
-
+void mesa(){
+    int posX =30;
+    int posY = 5;
     fondoMesa(posX,posY);
     bordeMesa(posX,posY);
 

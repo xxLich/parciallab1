@@ -8,54 +8,8 @@
 #include "mesa.h"
 #include "mesaydados.h"
 #include "Logica-dos-jugadores.h"
-
+#include "structuras.h"
 using namespace std;
-
-struct estatuas
-{
-
-    string vEstatuillas[5] = {"1.cangrejo","2.hormiga","3.medusa","4.aguila","5.salamandra"};
-    bool vEstatuillasDisponibles[5] =
-    {
-
-        true, ///0 cangrejo
-        true, ///1 hormiga
-        true, ///2 medusa
-        true, ///3 aguila
-        true  ///4 salamandra
-    };
-
-
-};
-
-struct jugadores
-{
-
-    string nombre;
-    string vEstatuillas[5] = {"|cangrejo|","|hormiga|","|medusa|","|aguila|","|salamandra|"};
-    bool vEstatuillasObtenidas[5] =
-    {
-
-        false, ///0 cangrejo
-        false, ///1 hormiga
-        false, ///2 medusa
-        false, ///3 aguila
-        false  ///4 salamandra
-    };
-
-    int vdados[5];
-    int puntos = 0;
-    bool turnoPrimero = false;
-
-
-    bool bendicionCangrejo = false;
-    bool bendicionHormiga = false;
-    bool bendicionMedusa = false;
-    bool bendicionAguila = false;
-    bool bendicionSalamandra = false;
-
-
-};
 
 
 
@@ -271,57 +225,77 @@ void dibujarEstatuilla(estatuas est)
 }
 
 
-void mostrarDatosJugadorDos(jugadores vJugadores[2]){
+void mostrarDatosJugadorDos(jugadores vJugadores[2])
+{
 
-        int datoEstatuillaX = 35;
+    int datoEstatuillaX = 35;
 
-        rlutil::locate(3,3);
-        cout<<"JUGADOR : " <<vJugadores[1].nombre;
+    rlutil::locate(3,3);
+    cout<<"JUGADOR : " <<vJugadores[1].nombre;
 
-        rlutil::locate(20,3);
-        cout<<"ESTATUILLAS OBTENIDAS : ";
+    rlutil::locate(20,3);
+    cout<<"ESTATUILLAS OBTENIDAS : ";
 
-        for(int i=0; i<5; i++)
+    for(int i=0; i<5; i++)
+    {
+
+        if(vJugadores[1].vEstatuillasObtenidas[i])
         {
 
-            if(vJugadores[1].vEstatuillasObtenidas[i])
-            {
 
-
-                rlutil::locate(datoEstatuillaX += 10,3);
-                cout<<vJugadores[1].vEstatuillas[i];
-
-            }
+            rlutil::locate(datoEstatuillaX += 10,3);
+            cout<<vJugadores[1].vEstatuillas[i];
 
         }
+
+    }
 
 }
 
 
-void mostrarDatosJugadorUno(jugadores vJugadores[2]){
+void mostrarDatosJugadorUno(jugadores vJugadores[2])
+{
 
-        int datoEstatuillaX = 35;
+    int datoEstatuillaX = 35;
 
 
-     rlutil::locate(3,3);
-        cout<<"JUGADOR : " <<vJugadores[0].nombre;
+    rlutil::locate(3,3);
+    cout<<"JUGADOR : " <<vJugadores[0].nombre;
 
-        rlutil::locate(20,3);
-        cout<<"ESTATUILLAS OBTENIDAS : ";
+    rlutil::locate(20,3);
+    cout<<"ESTATUILLAS OBTENIDAS : ";
 
-        for(int i=0; i<5; i++)
+    for(int i=0; i<5; i++)
+    {
+
+        if(vJugadores[0].vEstatuillasObtenidas[i])
         {
 
-            if(vJugadores[0].vEstatuillasObtenidas[i])
-            {
 
-
-                rlutil::locate(datoEstatuillaX += 10,3);
-                cout<<vJugadores[0].vEstatuillas[i];
-
-            }
+            rlutil::locate(datoEstatuillaX += 10,3);
+            cout<<vJugadores[0].vEstatuillas[i];
 
         }
+
+    }
+
+}
+
+
+
+///CARGA VECTORES DE LOS DADOS
+void llenarVectorDados(jugadores vJugadores[2])
+{
+
+
+    srand(time(0));
+
+    for(int i=0; i<5; i++)
+    {
+
+        vJugadores[0].dados[i]= 1+ (rand()%10);
+        vJugadores[1].dados[i]= 1+ (rand()%10);
+    }
 
 }
 
@@ -436,6 +410,29 @@ void cambiarTurnos(jugadores vJugadores[2])
 
 
 }
+///Lan dados
+
+void lanzarDosDadosDiezCaras(jugador vJugadores[2],int nroJugador)
+{
+
+    dosDadosDiezCaras(vJugadores,nroJugador);
+
+}
+
+
+void lanzarTresDadosDiezCaras(jugadores vJugadores[2], int nroJugador)
+{
+
+    tresDadosDiezCaras(vJugadores,nroJugador);
+
+}
+
+
+void lanzarCincoDadosSeisCaras(jugadores vJugadores[2],int nroJugador)
+{
+    cincoDadosSeisCaras(vJugadores,nroJugador);
+
+}
 
 
 /// juega hasta que gane alguno y sale con tu estado en true
@@ -455,7 +452,9 @@ void jugarPorTurno(jugadores vJugadores[2])
         int dado1 = 1+ (rand()%10);
         int dado2 = 1+ (rand()%10);
 
-
+        rlutil::locate(40,10);
+        rlutil::setColor(rlutil::BLACK);
+        cout<<"Boton para tirar dado";
         /// turno jugador 1
 
         vJugadores[1].turnoPrimero = false;
@@ -480,7 +479,7 @@ void jugarPorTurno(jugadores vJugadores[2])
         vJugadores[1].turnoPrimero = true;
 
         datosEnJuego(vJugadores);
-        mesa(30,5);
+        mesa();
 
 
         rlutil::anykey();
@@ -657,7 +656,7 @@ bool medusa_tres(int d1, int d2, int d3)
 }
 
 
- bool aguila_tres(int d1, int d2, int d3)
+bool aguila_tres(int d1, int d2, int d3)
 {
     if((d1==1 && d2==10) || (d1==10 && d2==1) || (d1==1 && d3==10) || (d1==10 && d3==1) || (d2==1 && d3==10) || (d2==10 && d3==1))
     {

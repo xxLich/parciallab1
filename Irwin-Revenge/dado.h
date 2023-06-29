@@ -10,6 +10,8 @@
 
 
 
+
+
 void dibujarCuadrado(int posX,int posY);
 void dibujarDados(int ,int ,int);
 void dibujarPuntos(int numero,int posX,int posY);

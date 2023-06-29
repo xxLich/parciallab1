@@ -10,6 +10,7 @@
 #else
 #include <unistd.h>
 #endif
+#include "structuras.h"
 
 using namespace std;
 void pintar(const char* text, int posx, int posy, bool selected){
@@ -26,18 +27,6 @@ else{
     rlutil::setBackgroundColor(rlutil::COLOR::BLACK);
 
 }
-
-void playMusic(const std::string& filename) {
-#ifdef _WIN32
-    std::string command = "start "" + filename + """;
-    system(command.c_str());
-#else
-    std::string command = "xdg-open "" + filename + """;
-    system(command.c_str());
-#endif
-}
-
-
 
 
 
