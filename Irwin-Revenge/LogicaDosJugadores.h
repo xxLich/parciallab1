@@ -91,6 +91,8 @@ void lanzarDosDadosDiezCaras(jugadores[],int);
 
 void lanzarTresDadosDiezCaras(jugadores[],int);
 
+void PuntosExpedicion(int&, int&, int&, int);
+
 
 
 

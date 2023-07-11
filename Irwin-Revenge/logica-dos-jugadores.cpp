@@ -198,6 +198,9 @@ void evaluarSeleccionTresDados(int seleccion,int jugadorActual,jugadores vJugado
 
     case 0:
 
+        //Se usa un contador para saber si es la primera vez que se jugara por la estampilla
+        vJugadores[jugadorActual].intentoCangrejo++;
+
         if(cangrejo_tres(dadoUno,dadoDos,dadoTres))
         {
             vJugadores[jugadorActual].vEstatuillasObtenidas[seleccion]= true;
@@ -207,6 +210,7 @@ void evaluarSeleccionTresDados(int seleccion,int jugadorActual,jugadores vJugado
             borrarCout();
             rlutil::locate(30,25);
             cout<<" Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoCangrejo);
             Sleep(1000);
 
             borrarCout();
@@ -222,7 +226,7 @@ void evaluarSeleccionTresDados(int seleccion,int jugadorActual,jugadores vJugado
             borrarCout();
             vJugadores[jugadorActual].puntos -= vJugadores[jugadorRival].dados[0];
             rlutil::locate(30,25);
-            cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0]<< " puntos "<<" Al jugador "<<vJugadores[jugadorActual].nombre;
+            cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0]<< " puntos "<<" al jugador "<<vJugadores[jugadorActual].nombre;
 
             Sleep(1500);
 
@@ -240,7 +244,7 @@ void evaluarSeleccionTresDados(int seleccion,int jugadorActual,jugadores vJugado
         }
 
     case 1:
-
+        vJugadores[jugadorActual].intentoHormiga++;
 
         if(hormiga_tres(dadoUno,dadoDos,dadoTres))
         {
@@ -251,6 +255,7 @@ void evaluarSeleccionTresDados(int seleccion,int jugadorActual,jugadores vJugado
             borrarCout();
             rlutil::locate(30,25);
             cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoHormiga);
             Sleep(1000);
 
              borrarCout();
@@ -284,6 +289,7 @@ void evaluarSeleccionTresDados(int seleccion,int jugadorActual,jugadores vJugado
 
 
     case 2:
+        vJugadores[jugadorActual].intentoMedusa++;
 
         if(medusa_tres(dadoUno,dadoDos,dadoTres))
         {
@@ -296,6 +302,7 @@ void evaluarSeleccionTresDados(int seleccion,int jugadorActual,jugadores vJugado
             borrarCout();
             rlutil::locate(30,25);
             cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoMedusa);
             Sleep(1000);
 
             break;
@@ -313,6 +320,7 @@ void evaluarSeleccionTresDados(int seleccion,int jugadorActual,jugadores vJugado
 
 
     case 3:
+        vJugadores[jugadorActual].intentoAguila++;
 
 
         if(aguila_tres(dadoUno,dadoDos,dadoTres))
@@ -326,6 +334,7 @@ void evaluarSeleccionTresDados(int seleccion,int jugadorActual,jugadores vJugado
             borrarCout();
             rlutil::locate(30,25);
             cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoAguila);
             Sleep(1000);
 
             break;
@@ -388,6 +397,7 @@ void evaluarSeleccionDosDados(int seleccion,int jugadorActual,jugadores vJugador
     {
 
     case 0:
+        vJugadores[jugadorActual].intentoCangrejo++;
 
         if(cangrejo(dadoUno,dadoDos))
         {
@@ -398,6 +408,7 @@ void evaluarSeleccionDosDados(int seleccion,int jugadorActual,jugadores vJugador
             borrarCout();
             rlutil::locate(30,25);
             cout<<" Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoCangrejo);
             Sleep(1000);
 
             ///
@@ -433,7 +444,7 @@ void evaluarSeleccionDosDados(int seleccion,int jugadorActual,jugadores vJugador
         }
 
     case 1:
-
+        vJugadores[jugadorActual].intentoHormiga++;
 
         if(hormiga(dadoUno,dadoDos))
         {
@@ -444,6 +455,7 @@ void evaluarSeleccionDosDados(int seleccion,int jugadorActual,jugadores vJugador
             borrarCout();
             rlutil::locate(30,25);
             cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoHormiga);
             Sleep(1000);
 
              borrarCout();
@@ -481,6 +493,7 @@ void evaluarSeleccionDosDados(int seleccion,int jugadorActual,jugadores vJugador
 
 
     case 2:
+        vJugadores[jugadorActual].intentoMedusa++;
 
         if(medusa(dadoUno,dadoDos))
         {
@@ -493,6 +506,7 @@ void evaluarSeleccionDosDados(int seleccion,int jugadorActual,jugadores vJugador
             borrarCout();
             rlutil::locate(30,25);
             cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoMedusa);
             Sleep(1000);
 
             break;
@@ -510,7 +524,7 @@ void evaluarSeleccionDosDados(int seleccion,int jugadorActual,jugadores vJugador
 
 
     case 3:
-
+        vJugadores[jugadorActual].intentoAguila++;
 
         if(aguila(dadoUno,dadoDos))
         {
@@ -523,6 +537,7 @@ void evaluarSeleccionDosDados(int seleccion,int jugadorActual,jugadores vJugador
             borrarCout();
             rlutil::locate(30,25);
             cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoAguila);
             Sleep(1000);
 
             break;
@@ -538,7 +553,7 @@ void evaluarSeleccionDosDados(int seleccion,int jugadorActual,jugadores vJugador
         }
 
     case 4:
-
+        vJugadores[jugadorActual].intentoSalamandra++;
 
         if(salamandra(dadoUno,dadoDos))
         {
@@ -551,6 +566,7 @@ void evaluarSeleccionDosDados(int seleccion,int jugadorActual,jugadores vJugador
             borrarCout();
             rlutil::locate(30,25);
             cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoSalamandra);
             Sleep(1000);
 
             break;
@@ -1253,6 +1269,16 @@ bool aguila_tres(int d1, int d2, int d3)
         return true;
     }
     return false;
+}
+
+void PuntosExpedicion(int& cont, int& contmas, int& contmenos, int intento){
+    if(intento==1){
+        contmas+=10;
+    }
+    else{
+        cont+=5;
+    }
+    contmenos-=3;
 }
 
 

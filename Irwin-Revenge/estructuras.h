@@ -40,7 +40,21 @@ struct jugadores
     };
 
     int dados[5];
-    int puntos = 0;
+
+    int PuntosEst=0;
+    int PuntosEstMas=0;
+    int PuntosEstMenos=0;
+    int PuntosGan=0;
+    int PuntosGanMas=0;
+    int PuntosLanz=0;
+    int puntos=0;
+
+    int intentoCangrejo=0;
+    int intentoHormiga=0;
+    int intentoMedusa=0;
+    int intentoAguila=0;
+    int intentoSalamandra=0;
+
     int rondas = 1;
 
 
