@@ -220,11 +220,12 @@
 	"LogicaDosJugadores.h"
 	"estructuras.h"
 
-1689025642 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\creditos.cpp
+1689302102 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\creditos.cpp
 	<iostream>
 	<chrono>
 	<thread>
 	"credito.h"
+	"rlutil.h"
 
 1689025642 c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\credito.h
 
@@ -261,7 +262,7 @@
 1689093548 c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\estructuras.h
 	<string>
 
-1689025642 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\dos-jugadores.cpp
+1689356514 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\dos-jugadores.cpp
 	<iostream>
 	"mesaydados.h"
 	"rlutil.h"
@@ -271,7 +272,7 @@
 1689025642 c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\mesaydados.h
 	"estructuras.h"
 
-1689093372 c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\logicadosjugadores.h
+1689357978 c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\logicadosjugadores.h
 	"estructuras.h"
 	<string>
 
@@ -293,7 +294,7 @@
 	"LogicaDosJugadores.h"
 	"estructuras.h"
 
-1689025642 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\main.cpp
+1689358012 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\main.cpp
 	<iostream>
 	"rlutil.h"
 	"Menu.h"
@@ -305,7 +306,7 @@
 
 1689025642 c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\reglas.h
 
-1689025642 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\menu.cpp
+1689358043 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\menu.cpp
 	<iostream>
 	"rlutil.h"
 	"Menu.h"
@@ -318,7 +319,7 @@
 	"rlutil.h"
 	"reglas.h"
 
-1689096451 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\logica-dos-jugadores.cpp
+1689358012 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\logica-dos-jugadores.cpp
 	<iostream>
 	"dado.h"
 	"mesaydados.h"

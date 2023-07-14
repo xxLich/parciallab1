@@ -8,7 +8,9 @@
 void borrarCout();
 void borrarCin();
 
-
+void estadisticas(int posX,int posY,jugadores[]);
+void nombreJuego(int,int);
+void Jugadores(int,int,jugadores[]);
 
 
 void turnoJugadores(int&,int&, jugadores[]);
@@ -38,6 +40,8 @@ bool evaluarMaldicionSalamandra(jugadores[],int);
 
 void llenarVectorDadosJugadorUno(jugadores[]);
 void llenarVectorDadosJugadorDos(jugadores[]);
+void llenarVectorDadosJugadorUnoFF(jugadores[]);
+void llenarVectorDadosJugadorDosFF(jugadores[]);
 
 
 
@@ -70,7 +74,6 @@ bool salamandra(int , int );
 
 
 
-
 bool cangrejo_tres(int d1, int d2, int d3);
 
 bool hormiga_tres(int d1 , int d2, int d3);
@@ -92,6 +95,21 @@ void lanzarDosDadosDiezCaras(jugadores[],int);
 void lanzarTresDadosDiezCaras(jugadores[],int);
 
 void PuntosExpedicion(int&, int&, int&, int);
+
+
+
+
+bool GanarFF(int,int,int,int,int);
+
+bool GanarFFS(int,int,int,int,int);
+
+bool GanarFFM(int,int,int,int,int);
+
+int EstatuillasCero(bool);
+
+void FinalizoFF(bool ,int&, int&, bool&);
+
+void FaseFinal(int,int,int,int,int,bool,bool,bool,bool,bool&,bool,int&,int&);
 
 
 

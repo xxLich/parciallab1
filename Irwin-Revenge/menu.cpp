@@ -116,17 +116,15 @@ int selectOpciones(int &P, int pY, int &salir,jugadores vJugadores[2], estatuas&
 
 
                 rlutil::cls();
-        //        estadisticas(1,1,vJugadores);
+               estadisticas(1,1,vJugadores);
 
                 break;
 
             /// CREDITOS
             case 2:
 
-
                 mostrarCreditos();
                 rlutil::cls();
-
                 break;
 
 
@@ -145,9 +143,9 @@ int selectOpciones(int &P, int pY, int &salir,jugadores vJugadores[2], estatuas&
                 cout<<"                                       " <<char(186)<<"  Esta seguro que desea salir?  "<<char(186)<<endl;
                 cout<<"                                       " <<char(186)<<"                                "<<char(186)<<endl;
                 cout<<"                                       " <<char(186)<<"                                "<<char(186)<<endl;
-                cout<<"                                       " <<char(186)<<"   Presione enter para salir    "<<char(186)<<endl;
+                cout<<"                                       " <<char(186)<<"->  Presione enter para salir   "<<char(186)<<endl;
                 cout<<"                                       " <<char(186)<<"                                "<<char(186)<<endl;
-                cout<<"                                       " <<char(186)<<"Presione otra tecla para volver "<<char(186)<<endl;
+                cout<<"                                       " <<char(186)<<"-> Regresar al menu (otra tecla)"<<char(186)<<endl;
                 cout<<"                                       " <<char(186)<<"                                "<<char(186)<<endl;
                 cout<<"                                       ";
                 cout<< char(200)<<char(205)<<char(205)<<char(205)<<char(205)<<char(205)<<char(205)<<char(205)<<char(205)<<char(205)<<char(205);

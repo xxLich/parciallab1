@@ -17,7 +17,7 @@ using namespace std;
 
 
 
-/*
+
 
 /// Estadisticas
 
@@ -47,7 +47,7 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2]){
 cout<<"HITO";
 
 cout<<"----------------------------------------------------------------------------------------------"<<endl;
-
+cout<<"                                        "<<vJugadores[0].nombre<<"                            "<<vJugadores[1].nombre<<endl;
 cout<<"Estatuilla                     "<<vJugadores[0].PuntosEst<<"                "<<vJugadores[1].PuntosEst<<endl;
 
 cout<<"Estatuilla++                   "<<vJugadores[0].PuntosEstMas<<"                "<<vJugadores[1].PuntosEstMas<<endl;
@@ -58,15 +58,23 @@ cout<<"Ganador++                      "<<vJugadores[0].PuntosGanMas<<"          
 
 cout<<"Est --                         "<<vJugadores[0].PuntosEstMenos<<"                "<<vJugadores[1].PuntosEstMenos<<endl;
 
-cout<<"Lanzamiento                    "<<vJugadores[0].PuntosEst<<"                "<<vJugadores[1].PuntosEst<<endl;
+cout<<"Lanzamiento                    "<<vJugadores[0].PuntosLanz<<"                "<<vJugadores[1].PuntosLanz<<endl;
 cout<<"----------------------------------------------------------------------------------------------"<<endl;
 
-cout<<"TOTAL                          "<<vJugadores[0].PuntosTotal<<"              "<<vJugadores[1].PuntosTotal <<endl;
+cout<<"TOTAL                          "<<vJugadores[0].puntos<<"              "<<vJugadores[1].puntos <<endl;
 
 cout<<"----------------------------------------------------------------------------------------------"<<endl;
 
 string ganador;
-if(vJugadores[0].PuntosTotal>vJugadores[1].PuntosTotal){
+
+vJugadores[0].puntos=vJugadores[0].PuntosEst+vJugadores[0].PuntosEstMas+vJugadores[0].PuntosGan+vJugadores[0].PuntosGanMas+
+vJugadores[0].PuntosEstMenos+vJugadores[0].PuntosLanz;
+
+vJugadores[1].puntos=vJugadores[1].PuntosEst+vJugadores[1].PuntosEstMas+vJugadores[1].PuntosGan+vJugadores[1].PuntosGanMas+
+vJugadores[1].PuntosEstMenos+vJugadores[1].PuntosLanz;
+
+
+if(vJugadores[0].puntos>vJugadores[1].puntos){
     ganador=vJugadores[0].nombre;
 }else{
 
@@ -77,7 +85,7 @@ cout<<"GANADOR: "<< ganador  <<endl;
 Sleep(5000);
 
    rlutil::cls();
-   main();
+
 
 
 
@@ -85,15 +93,18 @@ Sleep(5000);
 
 }
 
-*/
+
 
 
 void borrarCin()
 {
 
     rlutil::locate(30,28);
-    cout<<"   ";
-
+    cout<<"     ";
+    rlutil::locate(1,29);
+    cout<<"     ";
+    rlutil::locate(1,30);
+    cout<<"     ";
 
 }
 
@@ -103,6 +114,10 @@ void borrarCout()
 
 
     rlutil::locate(30,25);
+    cout<<"                                                         ";
+    rlutil::locate(30,26);
+    cout<<"                                                         ";
+    rlutil::locate(30,27);
     cout<<"                                                         ";
 
 
@@ -793,7 +808,7 @@ void mostrarDatosJugadorUno(jugadores vJugadores[2])
 
 
 
-///CARGA VECTORES DE LOS DADOS
+///CARGA VECTORES DE LOS DADOS DE 10 CARAS
 void llenarVectorDadosJugadorUno(jugadores vJugadores[2])
 {
 
@@ -818,6 +833,35 @@ void llenarVectorDadosJugadorDos(jugadores vJugadores[2])
     {
 
         vJugadores[1].dados[i]= 1+ (rand()%10);
+    }
+
+}
+
+///CARGA VECTORES DE LOS DADOS DE 6 CARAS.
+void llenarVectorDadosJugadorUnoFF(jugadores vJugadores[2])
+{
+
+
+    srand(time(0));
+
+    for(int i=0; i<5; i++)
+    {
+
+        vJugadores[0].dados[i]= 1+ (rand()%6);
+    }
+
+}
+
+void llenarVectorDadosJugadorDosFF(jugadores vJugadores[2])
+{
+
+
+    srand(time(0));
+
+    for(int i=0; i<5; i++)
+    {
+
+        vJugadores[1].dados[i]= 1+ (rand()%6);
     }
 
 }
@@ -1271,6 +1315,8 @@ bool aguila_tres(int d1, int d2, int d3)
     return false;
 }
 
+//FUNCION PARA OBTENER LOS PUNTOS DE LA FASE DE EXPEDICION
+
 void PuntosExpedicion(int& cont, int& contmas, int& contmenos, int intento){
     if(intento==1){
         contmas+=10;
@@ -1280,5 +1326,398 @@ void PuntosExpedicion(int& cont, int& contmas, int& contmenos, int intento){
     }
     contmenos-=3;
 }
+
+//FUNCIONES PARA SABER SI SE GANO LA FASE FINAL
+
+//ESCALERA COMUN
+
+bool GanarFF(int d1 , int d2 , int d3 , int d4 , int d5){
+    if(d1!=d2 && d1!=d3 && d1!=d4 && d1!=d5 && d2!=d3 && d2!=d4 && d2!=d5 && d3!=d4 && d3!=d5 && d4!=d5){
+        return 1;
+    }
+    return 0;
+}
+
+//ESCALERA CORTA (SALAMANDRA)
+
+bool GanarFFS(int d1 , int d2 , int d3 , int d4 , int d5){
+    if((d1!=d2 && d1!=d3 && d1!=d4 && d2!=d3 && d2!=d4 && d3!=d4) ||
+       (d1!=d2 && d1!=d3 && d1!=d5 && d2!=d3 && d2!=d5 && d3!=d5) || (d1!=d2 && d1!=d5 && d1!=d4 && d2!=d5 && d2!=d4 && d5!=d4) ||
+       (d1!=d5 && d1!=d3 && d1!=d4 && d5!=d3 && d5!=d4 && d3!=d4) || (d5!=d2 && d5!=d3 && d5!=d4 && d2!=d3 && d2!=d4 && d3!=d4)){
+        return 1;
+    }
+    return 0;
+}
+
+//ESCALERA TIPO MEDUSA
+
+bool GanarFFM(int d1 , int d2 , int d3 , int d4 , int d5){
+    if(d1==d2 && d2==d3 && d3==d4 && d4==d5){
+        return 1;
+    }
+    return 0;
+}
+int contHormiga=0;
+void FaseFinal(int dado1, int dado2, int dado3, int dado4, int dado5, bool BendHormiga, bool BendAguila, bool BendSalamandra, bool BendMedusa, bool& FindeFF, bool cero, int& puntosGan, int& puntosGanMas){
+    //Se crea un contador para que solo se elija una vez un numero
+
+
+    //NumH sera el numero que eligio el portador de la bendicion
+    int NumH;
+    int NumA;
+    // Hormiga = Eleccion de dado para cambiar valor (por BH)
+    // opcionAguiladado = lo mismo que Hormiga
+    int Hormiga;
+    int opcionAguiladado;
+    // Horm = Eleccion 1 o 2.
+    int Horm;
+    // Opcion de numero
+    int opcionAguila;
+
+
+    //serepiteBH es por si se puso un numero incorrecto
+    bool serepiteBH;
+    bool serepitehorm;
+    bool serepiteaguila;
+
+    if(contHormiga==0 && BendHormiga){
+            do{
+                rlutil::locate(30,25);
+                cout << "Elige un numero del 1 al 6: ";
+                rlutil::locate(30,28);
+                cin >> NumH;
+                borrarCout();
+                borrarCin();
+
+                    if(NumH>0 && NumH<7){
+                        contHormiga++;
+                        serepiteBH=false;
+                    }
+                    else{
+                        rlutil::locate(30,25);
+                        cout << "Numero incorrecto";
+                        Sleep(1500);
+                        serepiteBH=true;
+                    }
+
+                }while(serepiteBH==true);
+                borrarCout();
+    }
+    if(BendHormiga){
+                rlutil::locate(30,25);
+                cout << "Desea cambiar el valor de algun dado por el numero: " << NumH << endl;
+                rlutil::locate(30,26);
+                cout << "     1     - Si" << endl;
+                rlutil::locate(30,27);
+                cout << "     2     - No" << endl;
+
+                // Usamos un do while interno que nos servira por si el jugador escoje mal un numero asi tiene la oportunidad de elegir bien.
+
+                do{
+
+                    // Horm = Eleccion 1 o 2.
+                    // Hormiga = Eleccion de dado para cambiar valor (por BH)
+                    rlutil::locate(30,28);
+                    cin >> Horm;
+                    borrarCout();
+                    borrarCin();
+
+                    switch (Horm) {
+                        case 1:
+                            rlutil::locate(30, 25);
+                            cout << "Que dado desea cambiar (1 al 5)" << endl;
+                            rlutil::locate(30, 26);
+                            cout << "Dado 1: " << dado1 << "    Dado 2: " << dado2 << "    Dado 3: " << dado3 << endl;
+                            rlutil::locate(30, 27);
+                            cout << "    Dado 4: " << dado4 << "    Dado 5: " << dado5 << endl;
+                                rlutil::locate(30,28);
+                                cin >> Hormiga;
+                                borrarCout();
+                                borrarCin();
+
+                                switch (Hormiga) {
+                                    case 1:
+
+                                        dado1=NumH;
+                                        serepitehorm=false;
+
+                                        //serepitehorm si es falso saldra del do whilee interno.
+
+                                        break;
+                                    case 2:
+
+                                        dado2=NumH;
+                                        serepitehorm=false;
+                                        break;
+                                    case 3:
+
+                                        dado3=NumH;
+                                        serepitehorm=false;
+                                        break;
+                                    case 4:
+
+                                        dado4=NumH;
+                                        serepitehorm=false;
+                                        break;
+                                    case 5:
+
+                                        dado5=NumH;
+                                        serepitehorm=false;
+                                        break;
+
+                                    default:
+                                        rlutil::locate(35, 28);
+                                        cout << "(opcion incorrecta, elegi nuevamente)" << endl;
+                                        Sleep(1500);
+
+                                        rlutil::locate(30,25);
+                                        cout << "Desea cambiar el valor de algun dado por el numero: " << NumH << endl;
+                                        rlutil::locate(30,26);
+                                        cout << "     1     - Si" << endl;
+                                        rlutil::locate(30,27);
+                                        cout << "     2     - No" << endl;
+
+                                        serepitehorm=true;
+
+                                        //serepitehorm es true, por lo tanto cumple con el requisito del do while, entonces se repite vuelta, esto es porque eligio mal una opcion.
+
+                                        break;
+                                }
+                            break;
+
+                        case 2:
+
+                            serepitehorm=false;
+                            break;
+                        default:
+                            rlutil::locate(35, 28);
+                            cout << "(opcion equivocada, elegi nuevamente)" << endl;
+                            Sleep(1500);
+
+                            rlutil::locate(30,25);
+                            cout << "Desea cambiar el valor de algun dado por el numero: " << NumH << endl;
+                            rlutil::locate(30,26);
+                            cout << "     1     - Si" << endl;
+                            rlutil::locate(30,27);
+                            cout << "     2     - No" << endl;
+
+                            serepitehorm=true;
+                    }
+                    }while(serepitehorm==true);
+
+
+                }
+                //Pregunto por si el jugador tiene la bendicion aguila
+
+            if(BendAguila){
+                rlutil::locate(30,25);
+                cout << "Desea cambiar el valor de algun dado?"<< endl;
+                rlutil::locate(30,26);
+                cout << "     1     - Si" << endl;
+                rlutil::locate(30,27);
+                cout << "     2     - No" << endl;
+
+                // Usamos un do while interno que nos servira por si el jugador escoje mal un numero asi tiene la oportunidad de elegir bien (NumA = variable para la eleccion).
+
+                do{
+                    rlutil::locate(30,28);
+                    cin >> NumA;
+                    borrarCin();
+                    borrarCout();
+                    switch (NumA) {
+                        case 1:
+                            rlutil::locate(30, 25);
+                            cout << "Que dado desea cambiar (1 al 5)" << endl;
+                            rlutil::locate(30, 26);
+                            cout << "Dado 1: " << dado1 << "    Dado 2: " << dado2 << "    Dado 3: " << dado3<< endl;
+                            rlutil::locate(30, 27);
+                            cout << "    Dado 4: " << dado4<< "    Dado 5: " << dado5<< endl;
+                                rlutil::locate(30,28);
+                                cin >> opcionAguiladado;
+                                borrarCout();
+                                borrarCin();
+
+                                switch (opcionAguiladado) {
+                                    case 1:
+
+                                        rlutil::locate(30,25);
+                                        cout << "Ingrese el valor por el que desea cambiarlo (1 al 6): ";
+                                        rlutil::locate(30,28);
+                                        cin >> opcionAguila;
+                                        borrarCin();
+                                        borrarCout();
+
+                                        //Se cambia el valor del dado por un valor de preferencia.
+
+                                        if(opcionAguila>0 && opcionAguila<7){
+                                            dado1=opcionAguila;
+                                            serepiteaguila=false;
+                                        }
+                                        else{
+                                            rlutil::locate(30,27);
+                                            cout << "opcion equivocada" << endl;
+                                            Sleep(1500);
+
+                                            serepiteaguila=true;
+                                            //Si elegis mal entonces por medio de serepiteaguila=true vuelve a elegir un dado
+                                        }
+                                        break;
+                                    case 2:
+                                        rlutil::locate(30,25);
+                                        cout << "Ingrese el valor por el que desea cambiarlo (1 al 6): ";
+                                        rlutil::locate(30,28);
+                                        cin >> opcionAguila;
+                                        borrarCin();
+                                        borrarCout();
+
+                                        if(opcionAguila>0 && opcionAguila<7){
+                                            dado2=opcionAguila;
+                                            serepiteaguila=false;
+                                        }
+                                        else{
+                                            rlutil::locate(30,27);
+                                            cout << "opcion equivocada" << endl;
+                                            Sleep(1500);
+
+                                            serepiteaguila=true;
+                                        }
+                                        break;
+                                    case 3:
+                                        rlutil::locate(30,25);
+                                        cout << "Ingrese el valor por el que desea cambiarlo (1 al 6): ";
+                                        rlutil::locate(30,28);
+                                        cin >> opcionAguila;
+                                        borrarCin();
+                                        borrarCout();
+
+                                        if(opcionAguila>0 && opcionAguila<7){
+                                            dado3=opcionAguila;
+                                            serepiteaguila=false;
+                                        }
+                                        else{
+                                            rlutil::locate(30,27);
+                                            cout << "opcion equivocada" << endl;
+                                            Sleep(1500);
+
+                                            serepiteaguila=true;
+                                        }
+                                        break;
+                                    case 4:
+                                        rlutil::locate(30,25);
+                                        cout << "Ingrese el valor por el que desea cambiarlo (1 al 6): ";
+                                        rlutil::locate(30,28);
+                                        cin >> opcionAguila;
+                                        borrarCin();
+                                        borrarCout();
+
+                                        if(opcionAguila>0 && opcionAguila<7){
+                                            dado4=opcionAguila;
+                                            serepiteaguila=false;
+                                        }
+                                        else{
+                                            rlutil::locate(30,27);
+                                            cout << "opcion equivocada" << endl;
+                                            Sleep(1500);
+
+                                            serepiteaguila=true;
+                                        }
+                                        break;
+                                    case 5:
+                                        rlutil::locate(30,25);
+                                        cout << "Ingrese el valor por el que desea cambiarlo (1 al 6): ";
+                                        rlutil::locate(30,26);
+                                        cin >> opcionAguila;
+                                        borrarCin();
+                                        borrarCout();
+
+                                        if(opcionAguila>0 && opcionAguila<7){
+                                            dado5=opcionAguila;
+                                            serepiteaguila=false;
+                                        }
+                                        else{
+                                            rlutil::locate(30,27);
+                                            cout << "opcion equivocada" << endl;
+                                            Sleep(1500);
+
+                                            serepiteaguila=true;
+                                        }
+                                        break;
+
+                                    default:
+                                        cout << "opcion equivocada" << endl;
+                                        Sleep(1500);
+                                        serepiteaguila=true;
+                                        break;
+                                }
+                            break;
+
+                            case 2:
+                                serepiteaguila=false;
+                                break;
+                            default:
+                                cout << "opcion equivocada" << endl;
+                                Sleep(1500);
+                                serepiteaguila=true;
+                                break;
+                            }
+
+                        }while(serepiteaguila==true);
+
+                    }
+
+            //Se llama a la funcion GanarFF para saber si con los dados lanzados y/o modificados se gano la partida.
+
+                if(GanarFF(dado1, dado2, dado3, dado4, dado5)){
+                    FinalizoFF(cero, puntosGan , puntosGanMas, FindeFF);
+                    rlutil::locate(30,25);
+                    cout << "Ganaste Fase Final con escalera" << endl;
+                    Sleep(2000);
+                }
+                else{
+                if(BendSalamandra){
+                    if(GanarFFS(dado1, dado2, dado3, dado4, dado5)){
+                        FinalizoFF(cero, puntosGan , puntosGanMas, FindeFF);
+                        rlutil::locate(30,25);
+                        cout << "Ganaste la Fase Final con escalera reducida (Salamandra)" << endl;
+                        Sleep(2000);
+
+                        }
+                    }
+
+
+                    //Se verifica si el jugador tiene la bendicion de la medusa.
+                else{
+                if(BendMedusa){
+                    if(GanarFFM(dado1, dado2, dado3, dado4, dado5)){
+                        FinalizoFF(cero, puntosGan , puntosGanMas, FindeFF);
+                        rlutil::locate(30,25);
+                        cout << "Ganaste la Fase Final con dados repetidos (Bendicion de la Medusa)" << endl;
+                        Sleep(2000);
+                        }
+
+                    }
+                }
+                }
+
+
+
+
+}
+
+
+
+//bool cero es para saber si tiene 0 estatuillas, bool finFF pone fin a la fase final.
+
+void FinalizoFF(bool cero, int& puntosG , int& puntosGM , bool& FinFF){
+    if(cero==1){
+        puntosGM+=50;
+    }
+    else{
+        puntosG+=15;
+    }
+    FinFF=true;
+}
+
+
 
 
