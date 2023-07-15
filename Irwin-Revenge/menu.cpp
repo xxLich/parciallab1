@@ -116,7 +116,7 @@ int selectOpciones(int &P, int pY, int &salir,jugadores vJugadores[2], estatuas&
 
 
                 rlutil::cls();
-        //        estadisticas(1,1,vJugadores);
+                estadisticas(1,1,vJugadores);
 
                 break;
 

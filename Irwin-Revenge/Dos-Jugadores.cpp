@@ -4,6 +4,7 @@
 #include "estructuras.h"
 #include "LogicaDosJugadores.h"
 #include "lab.h"
+#include "Menu.h"
 
 
 using namespace std;
@@ -225,6 +226,8 @@ void dosJugadores(jugadores vJugadores[2],estatuas& estatuillas)
 
         //Booleando que indica el fin de la fase final
         bool FinFF=false;
+        //
+        bool serepiteBH;
 
 
 
@@ -232,11 +235,15 @@ void dosJugadores(jugadores vJugadores[2],estatuas& estatuillas)
 
         while(FinFF==false)
         {
-
+            if(FinFF)
+            {
+                break;
+            }
 
 
             for(int i=0; i<1; i++)
             {
+
                 vJugadores[primerJugador].PuntosLanz-=1;
 
                 mesa();
@@ -260,6 +267,34 @@ void dosJugadores(jugadores vJugadores[2],estatuas& estatuillas)
                     llenarVectorDadosJugadorDosFF(vJugadores);
                 }
 
+                if(vJugadores[primerJugador].vEstatuillasObtenidas[1]&&contHormiga==0)
+                {
+                    do
+                    {
+
+                        rlutil::locate(30,25);
+                        cout << "Bendicion Hormiga: Elige un numero del 1 al 6: ";
+                        cin >> NumH;
+                        borrarCout();
+
+                        if(NumH>0 && NumH<7)
+                        {
+                            contHormiga++;
+                            serepiteBH=false;
+                        }
+                        else
+                        {
+                            rlutil::locate(30,25);
+                            cout << "Numero incorrecto";
+                            Sleep(1500);
+                            serepiteBH=true;
+                        }
+
+                    }
+                    while(serepiteBH==true);
+
+
+                }
 
                 /// si no tiene estatuillas ganadas devuelve true
 
@@ -272,7 +307,7 @@ void dosJugadores(jugadores vJugadores[2],estatuas& estatuillas)
 
                 /// mayor parte de la fase final
 
-                FaseFinal(vJugadores,FinFF,cero1,primerJugador,contHormiga);
+                FaseFinal(vJugadores,FinFF,cero1,primerJugador,contHormiga, NumH);
 
 
                 /// si tiene la bendicion cangrejo
@@ -305,42 +340,6 @@ void dosJugadores(jugadores vJugadores[2],estatuas& estatuillas)
 
             for(int i=0; i<1; i++)
             {
-                if(vJugadores[segundoJugador].vEstatuillasObtenidas[1]&&contHormiga==0)
-                {
-                    bool serepiteBH=false;
-
-                    do
-                    {
-                        borrarCout();
-                        rlutil::locate(30,25);
-                        cout << "Bendicion Hormiga: Elige un numero del 1 al 6: ";
-                        borrarCin();
-                        rlutil::locate(30,28);
-                        cin >> NumH;
-
-
-                        if(NumH>0 && NumH<7)
-                        {
-                            contHormiga++;
-                            serepiteBH=false;
-                        }
-                        else
-                        {
-                            borrarCout();
-                            rlutil::locate(30,25);
-                            cout << "Numero incorrecto";
-                            Sleep(1500);
-                            serepiteBH=true;
-                        }
-
-                    }
-                    while(serepiteBH==true);
-
-
-                }
-
-
-
                 vJugadores[segundoJugador].PuntosLanz-=1;
 
                 mesa();
@@ -351,19 +350,46 @@ void dosJugadores(jugadores vJugadores[2],estatuas& estatuillas)
                 {
                     mostrarDatosJugadorUno(vJugadores);
                     llenarVectorDadosJugadorUnoFF(vJugadores);
+                }
 
+
+            /// si tiene mas estatuillas el jugador 2
+                if(segundoJugador ==1)
+                {
+                    mostrarDatosJugadorDos(vJugadores);
+                    llenarVectorDadosJugadorDosFF(vJugadores);
+                }
+
+
+                if(vJugadores[segundoJugador].vEstatuillasObtenidas[1]&&contHormiga==0)
+                {
+
+                    do
+                    {
+                        rlutil::locate(30,25);
+                        cout << "Bendicion Hormiga: Elige un numero del 1 al 6: ";
+                        cin >> NumH;
+                        borrarCout();
+
+                        if(NumH>0 && NumH<7)
+                        {
+                            contHormiga++;
+                            serepiteBH=false;
+                        }
+                        else
+                        {
+                            rlutil::locate(30,25);
+                            cout << "Numero incorrecto";
+                            Sleep(1500);
+                            serepiteBH=true;
+                        }
+
+                }
+                while(serepiteBH==true);
 
                 }
 
 
-            }
-
-            /// si tiene mas estatuillas el jugador 2
-            if(segundoJugador ==1)
-            {
-                mostrarDatosJugadorDos(vJugadores);
-                llenarVectorDadosJugadorDosFF(vJugadores);
-            }
             bool cero2 =EstatuillasCero(vJugadores[segundoJugador].vEstatuillasObtenidas);
 
             lanzarCincoDadosSeisCaras(vJugadores,segundoJugador);
@@ -379,10 +405,14 @@ void dosJugadores(jugadores vJugadores[2],estatuas& estatuillas)
                 BendCangrejo=false;
             }
 
+
         }
 
     }
+    }
 
+rlutil::cls();
+estadisticas(1,1,vJugadores);
 
 }
 

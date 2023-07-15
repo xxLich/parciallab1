@@ -199,6 +199,8 @@ void LAB1(jugadores vJugadores[2],estatuas& estatuillas){
         //Booleando que indica el fin de la fase final
         bool FinFF=false;
 
+        int NumH;
+
 
 
         /// cuando algun jugador hace una escalera sale
@@ -243,7 +245,7 @@ void LAB1(jugadores vJugadores[2],estatuas& estatuillas){
 
                     /// mayor parte de la fase final
 
-                    FaseFinal(vJugadores,FinFF,cero1,primerJugador,contHormiga);
+                    FaseFinal(vJugadores,FinFF,cero1,primerJugador,contHormiga,NumH);
 
 
                     /// si tiene la bendicion cangrejo
@@ -301,7 +303,7 @@ void LAB1(jugadores vJugadores[2],estatuas& estatuillas){
                     lanzarCincoDadosSeisCaras(vJugadores,segundoJugador);
 
 
-                    FaseFinal(vJugadores,FinFF,cero2,segundoJugador,contHormiga);
+                    FaseFinal(vJugadores,FinFF,cero2,segundoJugador,contHormiga,NumH);
 
 
 

@@ -11,21 +11,94 @@
 
 using namespace std;
 
+/// Estadisticas
 
+
+void estadisticas(int posX,int posY,jugadores[]);
+void nombreJuego(int,int);
+void Jugadores(int,int,jugadores[]);
+
+
+
+
+void estadisticas(int posX,int posY,jugadores vJugadores[2]){
+nombreJuego(1,1);
+Jugadores(1,1,vJugadores);
+
+
+}
+
+void nombreJuego(int posX,int posY){
+
+cout<<"                      Irwin Revenge - Estadistica del juego - FASE FINAL"                      <<endl;
+cout<<"----------------------------------------------------------------------------------------------"<<endl;
+
+}
+void Jugadores(int posX,int posY,jugadores vJugadores[2]){
+
+cout<<"HITO"<<endl;
+
+cout<<"----------------------------------------------------------------------------------------------"<<endl;
+
+cout<<"Estatuilla                     "<<vJugadores[0].PuntosEst<<"                "<<vJugadores[1].PuntosEst<<endl<<endl;
+
+cout<<"Estatuilla++                   "<<vJugadores[0].PuntosEstMas<<"                "<<vJugadores[1].PuntosEstMas<<endl<<endl;
+
+cout<<"Ganador                        "<<vJugadores[0].PuntosGan<<"                "<<vJugadores[1].PuntosGan<<endl<<endl;
+
+cout<<"Ganador++                      "<<vJugadores[0].PuntosGanMas<<"                "<<vJugadores[1].PuntosGanMas<<endl<<endl;
+
+cout<<"Est --                         "<<vJugadores[0].PuntosEstMenos<<"                "<<vJugadores[1].PuntosEstMenos<<endl<<endl;
+
+cout<<"Lanzamiento                    "<<vJugadores[0].PuntosLanz<<"                "<<vJugadores[1].PuntosLanz<<endl;
+cout<<"----------------------------------------------------------------------------------------------"<<endl;
+
+cout<<"TOTAL                          "<<vJugadores[0].puntos<<"                "<<vJugadores[1].puntos <<endl;
+
+cout<<"----------------------------------------------------------------------------------------------"<<endl;
+
+string ganador;
+
+vJugadores[0].puntos=vJugadores[0].PuntosEst+vJugadores[0].PuntosEstMas+vJugadores[0].PuntosGan+vJugadores[0].PuntosGanMas+
+vJugadores[0].PuntosEstMenos+vJugadores[0].PuntosLanz;
+
+vJugadores[1].puntos=vJugadores[1].PuntosEst+vJugadores[1].PuntosEstMas+vJugadores[1].PuntosGan+vJugadores[1].PuntosGanMas+
+vJugadores[1].PuntosEstMenos+vJugadores[1].PuntosLanz;
+
+
+if(vJugadores[0].puntos>vJugadores[1].puntos){
+    ganador=vJugadores[0].nombre;
+}else{
+
+    ganador = vJugadores[1].nombre;
+}
+cout<<"GANADOR: "<< ganador  <<endl;
+
+Sleep(7000);
+
+   rlutil::cls();
+}
 
 
 void borrarCin()
 {
     rlutil::locate(30,28);
-    cout<<"   ";
+    cout<<"     ";
+    rlutil::locate(1,29);
+    cout<<"     ";
+    rlutil::locate(1,30);
+    cout<<"     ";
 }
 
 
 void borrarCout()
 {
     rlutil::locate(30,25);
-    cout<<"                                                         ";
-
+    cout<<"                                                              ";
+    rlutil::locate(30,26);
+    cout<<"                                                              ";
+    rlutil::locate(30,27);
+    cout<<"                                                              ";
 }
 
 
@@ -74,7 +147,6 @@ void borrarCout()
 
 /// evalua los criterios para ganar las estatuillas con TRES dados
 
-
 void evaluarSeleccionTresDados(int seleccion,int jugadorActual,jugadores vJugadores[2],estatuas& estatuillas)
 {
 
@@ -118,6 +190,9 @@ void evaluarSeleccionTresDados(int seleccion,int jugadorActual,jugadores vJugado
 
     case 0:
 
+        //Se usa un contador para saber si es la primera vez que se jugara por la estampilla
+        vJugadores[jugadorActual].intentoCangrejo++;
+
         if(cangrejo_tres(dadoUno,dadoDos,dadoTres))
         {
             vJugadores[jugadorActual].vEstatuillasObtenidas[seleccion]= true;
@@ -127,6 +202,7 @@ void evaluarSeleccionTresDados(int seleccion,int jugadorActual,jugadores vJugado
             borrarCout();
             rlutil::locate(30,25);
             cout<<" Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoCangrejo);
             Sleep(1000);
 
             borrarCout();
@@ -142,7 +218,7 @@ void evaluarSeleccionTresDados(int seleccion,int jugadorActual,jugadores vJugado
             borrarCout();
             vJugadores[jugadorActual].puntos -= vJugadores[jugadorRival].dados[0];
             rlutil::locate(30,25);
-            cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0]<< " puntos "<<" Al jugador "<<vJugadores[jugadorActual].nombre;
+            cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0]<< " puntos "<<" al jugador "<<vJugadores[jugadorActual].nombre;
 
             Sleep(1500);
 
@@ -160,7 +236,7 @@ void evaluarSeleccionTresDados(int seleccion,int jugadorActual,jugadores vJugado
         }
 
     case 1:
-
+        vJugadores[jugadorActual].intentoHormiga++;
 
         if(hormiga_tres(dadoUno,dadoDos,dadoTres))
         {
@@ -171,6 +247,7 @@ void evaluarSeleccionTresDados(int seleccion,int jugadorActual,jugadores vJugado
             borrarCout();
             rlutil::locate(30,25);
             cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoHormiga);
             Sleep(1000);
 
              borrarCout();
@@ -204,6 +281,7 @@ void evaluarSeleccionTresDados(int seleccion,int jugadorActual,jugadores vJugado
 
 
     case 2:
+        vJugadores[jugadorActual].intentoMedusa++;
 
         if(medusa_tres(dadoUno,dadoDos,dadoTres))
         {
@@ -216,6 +294,7 @@ void evaluarSeleccionTresDados(int seleccion,int jugadorActual,jugadores vJugado
             borrarCout();
             rlutil::locate(30,25);
             cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoMedusa);
             Sleep(1000);
 
             break;
@@ -233,6 +312,7 @@ void evaluarSeleccionTresDados(int seleccion,int jugadorActual,jugadores vJugado
 
 
     case 3:
+        vJugadores[jugadorActual].intentoAguila++;
 
 
         if(aguila_tres(dadoUno,dadoDos,dadoTres))
@@ -246,6 +326,7 @@ void evaluarSeleccionTresDados(int seleccion,int jugadorActual,jugadores vJugado
             borrarCout();
             rlutil::locate(30,25);
             cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoAguila);
             Sleep(1000);
 
             break;
@@ -308,6 +389,7 @@ void evaluarSeleccionDosDados(int seleccion,int jugadorActual,jugadores vJugador
     {
 
     case 0:
+        vJugadores[jugadorActual].intentoCangrejo++;
 
         if(cangrejo(dadoUno,dadoDos))
         {
@@ -318,6 +400,7 @@ void evaluarSeleccionDosDados(int seleccion,int jugadorActual,jugadores vJugador
             borrarCout();
             rlutil::locate(30,25);
             cout<<" Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoCangrejo);
             Sleep(1000);
 
             ///
@@ -353,7 +436,7 @@ void evaluarSeleccionDosDados(int seleccion,int jugadorActual,jugadores vJugador
         }
 
     case 1:
-
+        vJugadores[jugadorActual].intentoHormiga++;
 
         if(hormiga(dadoUno,dadoDos))
         {
@@ -364,6 +447,7 @@ void evaluarSeleccionDosDados(int seleccion,int jugadorActual,jugadores vJugador
             borrarCout();
             rlutil::locate(30,25);
             cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoHormiga);
             Sleep(1000);
 
              borrarCout();
@@ -401,6 +485,7 @@ void evaluarSeleccionDosDados(int seleccion,int jugadorActual,jugadores vJugador
 
 
     case 2:
+        vJugadores[jugadorActual].intentoMedusa++;
 
         if(medusa(dadoUno,dadoDos))
         {
@@ -413,6 +498,7 @@ void evaluarSeleccionDosDados(int seleccion,int jugadorActual,jugadores vJugador
             borrarCout();
             rlutil::locate(30,25);
             cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoMedusa);
             Sleep(1000);
 
             break;
@@ -430,7 +516,7 @@ void evaluarSeleccionDosDados(int seleccion,int jugadorActual,jugadores vJugador
 
 
     case 3:
-
+        vJugadores[jugadorActual].intentoAguila++;
 
         if(aguila(dadoUno,dadoDos))
         {
@@ -443,6 +529,7 @@ void evaluarSeleccionDosDados(int seleccion,int jugadorActual,jugadores vJugador
             borrarCout();
             rlutil::locate(30,25);
             cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoAguila);
             Sleep(1000);
 
             break;
@@ -458,7 +545,7 @@ void evaluarSeleccionDosDados(int seleccion,int jugadorActual,jugadores vJugador
         }
 
     case 4:
-
+        vJugadores[jugadorActual].intentoSalamandra++;
 
         if(salamandra(dadoUno,dadoDos))
         {
@@ -471,6 +558,7 @@ void evaluarSeleccionDosDados(int seleccion,int jugadorActual,jugadores vJugador
             borrarCout();
             rlutil::locate(30,25);
             cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoSalamandra);
             Sleep(1000);
 
             break;
@@ -1366,9 +1454,9 @@ void FaseFinal(jugadores vJugadores[2],bool& FinFF,bool& cero, int jugadorActual
                             rlutil::locate(30, 25);
                             cout << "Que dado desea cambiar (1 al 5)" << endl;
                             rlutil::locate(30, 26);
-                            cout << "Dado 1: " << dado1 << "    Dado 2: " << dado2 << "    Dado 3: " << dado3 << endl;
+                            cout << "Dado 1      Dado 2       Dado 3"<< endl;
                             rlutil::locate(30, 27);
-                            cout << "    Dado 4: " << dado4 << "    Dado 5: " << dado5 << endl;
+                            cout << "      Dado 4       Dado 5"<< endl;
                                 rlutil::locate(30,28);
                                 cin >> Hormiga;
                                 borrarCout();
@@ -1468,9 +1556,9 @@ void FaseFinal(jugadores vJugadores[2],bool& FinFF,bool& cero, int jugadorActual
                             rlutil::locate(30, 25);
                             cout << "Que dado desea cambiar (1 al 5)" << endl;
                             rlutil::locate(30, 26);
-                            cout << "Dado 1: " << dado1 << "    Dado 2: " << dado2 << "    Dado 3: " << dado3<< endl;
+                            cout << "Dado 1      Dado 2       Dado 3"<< endl;
                             rlutil::locate(30, 27);
-                            cout << "    Dado 4: " << dado4<< "    Dado 5: " << dado5<< endl;
+                            cout << "      Dado 4       Dado 5"<< endl;
                                 rlutil::locate(30,28);
                                 cin >> opcionAguiladado;
                                 borrarCout();
@@ -1528,7 +1616,8 @@ void FaseFinal(jugadores vJugadores[2],bool& FinFF,bool& cero, int jugadorActual
                                         cout << "Ingrese el valor por el que desea cambiarlo (1 al 6): ";
                                         rlutil::locate(30,28);
                                         cin >> opcionAguila;
-
+                                        borrarCin();
+                                        borrarCout();
 
                                         if(opcionAguila>0 && opcionAguila<7){
                                             dado3=opcionAguila;
