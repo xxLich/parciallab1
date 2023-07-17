@@ -12,8 +12,10 @@ using namespace std;
 
 /// Funcion que corre el juego
 
+
 void dosJugadores(jugadores vJugadores[2],estatuas& estatuillas)
 {
+
 
     /// pide los nombres de los 2 vJugadores
 
@@ -212,10 +214,14 @@ void dosJugadores(jugadores vJugadores[2],estatuas& estatuillas)
 
 
 
+        /// contador para que se ejecute la bendicion solo una vez
         int contHormiga = 0;
-        int NumH;
 
-        //Booleano para activar la bendicion del Cangrejo
+
+        /// valor de eleccion bend hormiga
+        int NumH = 0;
+
+        ///Booleano para activar la bendicion del Cangrejo
         bool BendCangrejo=true;
 
         /// Evaluamos quien empieza
@@ -224,9 +230,9 @@ void dosJugadores(jugadores vJugadores[2],estatuas& estatuillas)
         /// cambia las variables de primer y segundo jugador dependiendo de quien tiene mas estatuillas obtenidas
         turnoJugadores(primerJugador,segundoJugador,vJugadores);
 
-        //Booleando que indica el fin de la fase final
+        ///Booleando que indica el fin de la fase final
         bool FinFF=false;
-        //
+        ///
         bool serepiteBH;
 
 
@@ -338,6 +344,7 @@ void dosJugadores(jugadores vJugadores[2],estatuas& estatuillas)
 
           /// pide un numero solo una vez para poder cambir un dado por este valor
 
+
             for(int i=0; i<1; i++)
             {
                 vJugadores[segundoJugador].PuntosLanz-=1;
@@ -361,11 +368,19 @@ void dosJugadores(jugadores vJugadores[2],estatuas& estatuillas)
                 }
 
 
+
+
+                /// ejecutala bendicion de hormiga
+                /// tiene una eleccion unida de valor de dado
+
                 if(vJugadores[segundoJugador].vEstatuillasObtenidas[1]&&contHormiga==0)
                 {
 
                     do
                     {
+                       /// selecciona el valor que va a poder reemplazar un dado
+                       /// solo se ejecuta una vez
+
                         rlutil::locate(30,25);
                         cout << "Bendicion Hormiga: Elige un numero del 1 al 6: ";
                         cin >> NumH;
@@ -390,17 +405,25 @@ void dosJugadores(jugadores vJugadores[2],estatuas& estatuillas)
                 }
 
 
-            bool cero2 =EstatuillasCero(vJugadores[segundoJugador].vEstatuillasObtenidas);
+
+
+
+            /// contiene el retorno de la funcion que nos da si un jugador tiene 0 estatuillas
+            /// +50 pts al que gane fase final sin estatuillas
+            bool jugadorDosCeroEstatuillas =EstatuillasCero(vJugadores[segundoJugador].vEstatuillasObtenidas);
 
             lanzarCincoDadosSeisCaras(vJugadores,segundoJugador);
 
 
-            FaseFinal(vJugadores,FinFF,cero2,segundoJugador,contHormiga,NumH);
+            FaseFinal(vJugadores,FinFF,jugadorDosCeroEstatuillas,segundoJugador,contHormiga,NumH);
 
 
 
+            /// si tiebne bendicion cangrejo juega 2 veces la primera ronda
             if(BendCangrejo && vJugadores[segundoJugador].vEstatuillasObtenidas[0] && FinFF==false)
             {
+
+               /// cambia valor de i en for para la repeticion
                 i=-1;
                 BendCangrejo=false;
             }
@@ -415,23 +438,6 @@ rlutil::cls();
 estadisticas(1,1,vJugadores);
 
 }
-
-
-
-
-
-
-
-
-///***************
-
-/// termina el else
-
-
-
-
-
-/// mostrar tabla de puntuacion
 
 
 

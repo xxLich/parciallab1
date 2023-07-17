@@ -230,21 +230,21 @@
 	"LogicaDosJugadores.h"
 	"lab.h"
 
-1688074002 source:c:\users\ivana\desktop\irwin-revenge\creditos.cpp
+1689451093 source:c:\users\ivana\desktop\irwin-revenge\creditos.cpp
 	<iostream>
 	<chrono>
 	<thread>
 	"credito.h"
 
-1688074002 c:\users\ivana\desktop\irwin-revenge\credito.h
+1689451093 c:\users\ivana\desktop\irwin-revenge\credito.h
 
-1688099078 source:c:\users\ivana\desktop\irwin-revenge\dados.cpp
+1689451093 source:c:\users\ivana\desktop\irwin-revenge\dados.cpp
 	<iostream>
 	"rlutil.h"
 	"Menu.h"
 	"dado.h"
 
-1688074002 c:\users\ivana\desktop\irwin-revenge\rlutil.h
+1689451093 c:\users\ivana\desktop\irwin-revenge\rlutil.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -258,7 +258,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1688589972 c:\users\ivana\desktop\irwin-revenge\menu.h
+1689451093 c:\users\ivana\desktop\irwin-revenge\menu.h
 	<iostream>
 	"rlutil.h"
 	"Menu.h"
@@ -266,22 +266,22 @@
 	<string>
 	"estructuras.h"
 
-1688075119 c:\users\ivana\desktop\irwin-revenge\dado.h
+1689451093 c:\users\ivana\desktop\irwin-revenge\dado.h
 
-1689378108 c:\users\ivana\desktop\irwin-revenge\estructuras.h
+1689451093 c:\users\ivana\desktop\irwin-revenge\estructuras.h
 	<string>
 
-1688260733 source:c:\users\ivana\desktop\irwin-revenge\funcionesmesaydados.cpp
+1689451093 source:c:\users\ivana\desktop\irwin-revenge\funcionesmesaydados.cpp
 	<iostream>
 	"mesaydados.h"
 	"rlutil.h"
 	"dado.h"
 	"estructuras.h"
 
-1688077415 c:\users\ivana\desktop\irwin-revenge\mesaydados.h
+1689451093 c:\users\ivana\desktop\irwin-revenge\mesaydados.h
 	"estructuras.h"
 
-1689379688 source:c:\users\ivana\desktop\irwin-revenge\logica-dos-jugadores.cpp
+1689559172 source:c:\users\ivana\desktop\irwin-revenge\logica-dos-jugadores.cpp
 	<iostream>
 	"dado.h"
 	"mesaydados.h"
@@ -293,11 +293,11 @@
 	<string>
 	<windows.h>
 
-1689379619 c:\users\ivana\desktop\irwin-revenge\logicadosjugadores.h
+1689555781 c:\users\ivana\desktop\irwin-revenge\logicadosjugadores.h
 	"estructuras.h"
 	<string>
 
-1689220909 source:c:\users\ivana\desktop\irwin-revenge\logicalab.cpp
+1689451093 source:c:\users\ivana\desktop\irwin-revenge\logicalab.cpp
 	<iostream>
 	"mesaydados.h"
 	"rlutil.h"
@@ -305,11 +305,11 @@
 	"LogicaDosJugadores.h"
 	"lab.h"
 
-1689376227 c:\users\ivana\desktop\irwin-revenge\lab.h
+1689451093 c:\users\ivana\desktop\irwin-revenge\lab.h
 	"estructuras.h"
 	<string>
 
-1688413771 source:c:\users\ivana\desktop\irwin-revenge\main.cpp
+1689451093 source:c:\users\ivana\desktop\irwin-revenge\main.cpp
 	<iostream>
 	"rlutil.h"
 	"Menu.h"
@@ -319,9 +319,9 @@
 	"estructuras.h"
 	<string>
 
-1688074002 c:\users\ivana\desktop\irwin-revenge\reglas.h
+1689451093 c:\users\ivana\desktop\irwin-revenge\reglas.h
 
-1688697631 source:c:\users\ivana\desktop\irwin-revenge\menu.cpp
+1689451093 source:c:\users\ivana\desktop\irwin-revenge\menu.cpp
 	<iostream>
 	"rlutil.h"
 	"Menu.h"
@@ -329,7 +329,7 @@
 	"credito.h"
 	"estructuras.h"
 
-1688074002 source:c:\users\ivana\desktop\irwin-revenge\reglas.cpp
+1689451093 source:c:\users\ivana\desktop\irwin-revenge\reglas.cpp
 	<iostream>
 	"rlutil.h"
 	"reglas.h"
@@ -454,4 +454,145 @@
 	"LogicaDosJugadores.h"
 	<string>
 	<windows.h>
+
+1689559738 source:c:\users\ivana\desktop\irwin-revenge\dos-jugadores.cpp
+	<iostream>
+	"mesaydados.h"
+	"rlutil.h"
+	"estructuras.h"
+	"LogicaDosJugadores.h"
+	"lab.h"
+	"Menu.h"
+
+1689559737 source:c:\users\ivana\desktop\irwin-revenge\lab.cpp
+	<iostream>
+	"mesaydados.h"
+	"rlutil.h"
+	"estructuras.h"
+	"LogicaDosJugadores.h"
+	"lab.h"
+
+1689451093 source:c:\users\mromar95\desktop\irwin-revenge\creditos.cpp
+	<iostream>
+	<chrono>
+	<thread>
+	"credito.h"
+
+1689451093 c:\users\mromar95\desktop\irwin-revenge\credito.h
+
+1689451093 source:c:\users\mromar95\desktop\irwin-revenge\dados.cpp
+	<iostream>
+	"rlutil.h"
+	"Menu.h"
+	"dado.h"
+
+1689451093 c:\users\mromar95\desktop\irwin-revenge\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1689451093 c:\users\mromar95\desktop\irwin-revenge\menu.h
+	<iostream>
+	"rlutil.h"
+	"Menu.h"
+	"dado.h"
+	<string>
+	"estructuras.h"
+
+1689451093 c:\users\mromar95\desktop\irwin-revenge\dado.h
+
+1689562169 c:\users\mromar95\desktop\irwin-revenge\estructuras.h
+	<string>
+
+1689559738 source:c:\users\mromar95\desktop\irwin-revenge\dos-jugadores.cpp
+	<iostream>
+	"mesaydados.h"
+	"rlutil.h"
+	"estructuras.h"
+	"LogicaDosJugadores.h"
+	"lab.h"
+	"Menu.h"
+
+1689451093 c:\users\mromar95\desktop\irwin-revenge\mesaydados.h
+	"estructuras.h"
+
+1689565004 c:\users\mromar95\desktop\irwin-revenge\logicadosjugadores.h
+	"estructuras.h"
+	<string>
+
+1689451093 c:\users\mromar95\desktop\irwin-revenge\lab.h
+	"estructuras.h"
+	<string>
+
+1689451093 source:c:\users\mromar95\desktop\irwin-revenge\funcionesmesaydados.cpp
+	<iostream>
+	"mesaydados.h"
+	"rlutil.h"
+	"dado.h"
+	"estructuras.h"
+
+1689451093 source:c:\users\mromar95\desktop\irwin-revenge\main.cpp
+	<iostream>
+	"rlutil.h"
+	"Menu.h"
+	"dado.h"
+	<windows.h>
+	"reglas.h"
+	"estructuras.h"
+	<string>
+
+1689451093 c:\users\mromar95\desktop\irwin-revenge\reglas.h
+
+1689565363 source:c:\users\mromar95\desktop\irwin-revenge\menu.cpp
+	<iostream>
+	"rlutil.h"
+	"Menu.h"
+	"dado.h"
+	"credito.h"
+	"estructuras.h"
+	"LogicaDosJugadores.h"
+
+1689451093 source:c:\users\mromar95\desktop\irwin-revenge\reglas.cpp
+	<iostream>
+	"rlutil.h"
+	"reglas.h"
+
+1689562888 source:c:\users\mromar95\desktop\irwin-revenge\logicalab.cpp
+	<iostream>
+	"mesaydados.h"
+	"rlutil.h"
+	"estructuras.h"
+	"LogicaDosJugadores.h"
+	"lab.h"
+
+1689563446 source:c:\users\mromar95\desktop\irwin-revenge\lab.cpp
+	<iostream>
+	"mesaydados.h"
+	"rlutil.h"
+	"estructuras.h"
+	"LogicaDosJugadores.h"
+	"lab.h"
+	"Menu.h"
+
+1689565316 source:c:\users\mromar95\desktop\irwin-revenge\logica-dos-jugadores.cpp
+	<iostream>
+	"dado.h"
+	"mesaydados.h"
+	"estructuras.h"
+	"rlutil.h"
+	<ctime>
+	<cstdlib>
+	"LogicaDosJugadores.h"
+	<string>
+	<windows.h>
+	"Menu.h"
 

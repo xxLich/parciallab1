@@ -8,6 +8,7 @@
 #include "LogicaDosJugadores.h"
 #include <string>
 #include <windows.h>
+#include "Menu.h"
 
 using namespace std;
 
@@ -22,10 +23,21 @@ void Jugadores(int,int,jugadores[]);
 
 
 void estadisticas(int posX,int posY,jugadores vJugadores[2]){
+
+    //Suma los puntos totales
+
+vJugadores[0].puntos=vJugadores[0].PuntosEst+vJugadores[0].PuntosEstMas+vJugadores[0].PuntosGan+vJugadores[0].PuntosGanMas+
+vJugadores[0].PuntosEstMenos+vJugadores[0].PuntosLanz+vJugadores[0].PuntosCangrejo+vJugadores[0].PuntosHormiga;
+
+vJugadores[1].puntos=vJugadores[1].PuntosEst+vJugadores[1].PuntosEstMas+vJugadores[1].PuntosGan+vJugadores[1].PuntosGanMas+
+vJugadores[1].PuntosEstMenos+vJugadores[1].PuntosLanz+vJugadores[1].PuntosCangrejo+vJugadores[1].PuntosHormiga;
+
+
 nombreJuego(1,1);
 Jugadores(1,1,vJugadores);
 
-
+rlutil::anykey("Presione una tecla para volver al menu");
+rlutil::cls();
 }
 
 void nombreJuego(int posX,int posY){
@@ -44,6 +56,10 @@ cout<<"Estatuilla                     "<<vJugadores[0].PuntosEst<<"             
 
 cout<<"Estatuilla++                   "<<vJugadores[0].PuntosEstMas<<"                "<<vJugadores[1].PuntosEstMas<<endl<<endl;
 
+cout<<"Descuento maldicion cangrejo   "<<vJugadores[0].PuntosCangrejo<<"                "<<vJugadores[1].PuntosCangrejo<<endl<<endl;
+
+cout<<"Descuento maldicion hormiga   "<<vJugadores[0].PuntosHormiga<<"                "<<vJugadores[1].PuntosHormiga<<endl<<endl;
+
 cout<<"Ganador                        "<<vJugadores[0].PuntosGan<<"                "<<vJugadores[1].PuntosGan<<endl<<endl;
 
 cout<<"Ganador++                      "<<vJugadores[0].PuntosGanMas<<"                "<<vJugadores[1].PuntosGanMas<<endl<<endl;
@@ -59,13 +75,6 @@ cout<<"-------------------------------------------------------------------------
 
 string ganador;
 
-vJugadores[0].puntos=vJugadores[0].PuntosEst+vJugadores[0].PuntosEstMas+vJugadores[0].PuntosGan+vJugadores[0].PuntosGanMas+
-vJugadores[0].PuntosEstMenos+vJugadores[0].PuntosLanz;
-
-vJugadores[1].puntos=vJugadores[1].PuntosEst+vJugadores[1].PuntosEstMas+vJugadores[1].PuntosGan+vJugadores[1].PuntosGanMas+
-vJugadores[1].PuntosEstMenos+vJugadores[1].PuntosLanz;
-
-
 if(vJugadores[0].puntos>vJugadores[1].puntos){
     ganador=vJugadores[0].nombre;
 }else{
@@ -74,9 +83,6 @@ if(vJugadores[0].puntos>vJugadores[1].puntos){
 }
 cout<<"GANADOR: "<< ganador  <<endl;
 
-Sleep(7000);
-
-   rlutil::cls();
 }
 
 
@@ -216,7 +222,7 @@ void evaluarSeleccionTresDados(int seleccion,int jugadorActual,jugadores vJugado
             lanzarUnDadoDiezCaras(vJugadores,jugadorRival);
 
             borrarCout();
-            vJugadores[jugadorActual].puntos -= vJugadores[jugadorRival].dados[0];
+            vJugadores[jugadorActual].PuntosCangrejo -= vJugadores[jugadorRival].dados[0];
             rlutil::locate(30,25);
             cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0]<< " puntos "<<" al jugador "<<vJugadores[jugadorActual].nombre;
 
@@ -261,9 +267,9 @@ void evaluarSeleccionTresDados(int seleccion,int jugadorActual,jugadores vJugado
             lanzarDosDadosDiezCaras(vJugadores,jugadorRival);
 
             borrarCout();
-            vJugadores[jugadorActual].puntos -= ( vJugadores[jugadorRival].dados[0] + vJugadores[jugadorRival].dados[1]);
+            vJugadores[jugadorActual].PuntosHormiga -= ( vJugadores[jugadorRival].dados[0] + vJugadores[jugadorRival].dados[1]);
             rlutil::locate(30,25);
-            cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0] + vJugadores[jugadorRival].dados[1] << " puntos "<<" Al jugador "<<vJugadores[jugadorActual].nombre;
+            cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0] + vJugadores[jugadorRival].dados[1] << " puntos "<<" al jugador "<<vJugadores[jugadorActual].nombre;
 
             Sleep(1500);
 
@@ -417,9 +423,9 @@ void evaluarSeleccionDosDados(int seleccion,int jugadorActual,jugadores vJugador
             lanzarUnDadoDiezCaras(vJugadores,jugadorRival);
 
             borrarCout();
-            vJugadores[jugadorActual].puntos -= vJugadores[jugadorRival].dados[0];
+            vJugadores[jugadorActual].PuntosCangrejo -= vJugadores[jugadorRival].dados[0];
             rlutil::locate(30,25);
-            cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0]<< " puntos "<<" Al jugador "<<vJugadores[jugadorActual].nombre;
+            cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0]<< " puntos "<<" al jugador "<<vJugadores[jugadorActual].nombre;
 
             Sleep(1500);
 
@@ -461,9 +467,9 @@ void evaluarSeleccionDosDados(int seleccion,int jugadorActual,jugadores vJugador
             lanzarDosDadosDiezCaras(vJugadores,jugadorRival);
 
             borrarCout();
-            vJugadores[jugadorActual].puntos -= ( vJugadores[jugadorRival].dados[0] + vJugadores[jugadorRival].dados[1]);
+            vJugadores[jugadorActual].PuntosHormiga -= ( vJugadores[jugadorRival].dados[0] + vJugadores[jugadorRival].dados[1]);
             rlutil::locate(30,25);
-            cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0] + vJugadores[jugadorRival].dados[1] << " puntos "<<" Al jugador "<<vJugadores[jugadorActual].nombre;
+            cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0] + vJugadores[jugadorRival].dados[1] << " puntos "<<" al jugador "<<vJugadores[jugadorActual].nombre;
 
             Sleep(1500);
 
@@ -1389,6 +1395,8 @@ void FaseFinal(jugadores vJugadores[2],bool& FinFF,bool& cero, int jugadorActual
     bool BendHormiga,BendMedusa,BendAguila,BendSalamandra;
 
 
+    /// llenamos variables con valores del vJugadores
+
     dado1 = vJugadores[jugadorActual].dados[0];
     dado2 = vJugadores[jugadorActual].dados[1];
     dado3 = vJugadores[jugadorActual].dados[2];
@@ -1402,19 +1410,26 @@ void FaseFinal(jugadores vJugadores[2],bool& FinFF,bool& cero, int jugadorActual
 
 
 
-    //Se crea un contador para que solo se elija una vez un numero
 
 
-    //NumH sera el numero que eligio el portador de la bendicion
 
-
+    ///NumA sera el numero que eligio el portador de la bendicion
     int NumA;
+
+
+
     // Hormiga = Eleccion de dado para cambiar valor (por BH)
     // opcionAguiladado = lo mismo que Hormiga
-    int Hormiga;
-    int opcionAguiladado;
+    int opcionDadoHormiga;
+
+
+
+
+    int opcionDadoAguila;
     // Horm = Eleccion 1 o 2.
-    int Horm;
+   int Horm;
+
+
     // Opcion de numero
     int opcionAguila;
 
@@ -1422,13 +1437,21 @@ void FaseFinal(jugadores vJugadores[2],bool& FinFF,bool& cero, int jugadorActual
 
 
 
-    //serepiteBH es por si se puso un numero incorrecto
+    ///serepiteBH es por si se puso un numero incorrecto
     bool serepiteBH;
     bool serepitehorm;
     bool serepiteaguila;
 
 
+
+
+                /// elige 1 solo valor con el cual se puede intercambiar el valor de un dado por este
+
+
+
+    /// jugador actual tiene hormiga
     if(BendHormiga){
+
 
 
                 rlutil::locate(30,25);
@@ -1438,12 +1461,16 @@ void FaseFinal(jugadores vJugadores[2],bool& FinFF,bool& cero, int jugadorActual
                 rlutil::locate(30,27);
                 cout << "     2     - No" << endl;
 
-                // Usamos un do while interno que nos servira por si el jugador escoje mal un numero asi tiene la oportunidad de elegir bien.
+                /// Usamos un do while interno que nos servira por si el jugador escoje mal un numero asi tiene la oportunidad de elegir bien.
 
                 do{
 
-                    // Horm = Eleccion 1 o 2.
-                    // Hormiga = Eleccion de dado para cambiar valor (por BH)
+
+
+                    /// Horm = Eleccion 1 o 2.
+                    /// opcionDadoHormiga = Eleccion de dado para cambiar valor (por BH)
+
+
                     rlutil::locate(30,28);
                     cin >> Horm;
                     borrarCout();
@@ -1458,39 +1485,45 @@ void FaseFinal(jugadores vJugadores[2],bool& FinFF,bool& cero, int jugadorActual
                             rlutil::locate(30, 27);
                             cout << "      Dado 4       Dado 5"<< endl;
                                 rlutil::locate(30,28);
-                                cin >> Hormiga;
+
+                                cin >> opcionDadoHormiga;
+
+
+
                                 borrarCout();
                                 borrarCin();
 
-                                switch (Hormiga) {
+
+                                switch (opcionDadoHormiga) {
                                     case 1:
 
-                                        dado1=NumH;
+                                        vJugadores[jugadorActual].dados[0] = NumH;
                                         serepitehorm=false;
 
-                                        //serepitehorm si es falso saldra del do whilee interno.
+                                        ///serepitehorm si es falso saldra del do whilee interno.
 
                                         break;
                                     case 2:
 
-                                        dado2=NumH;
+                                         vJugadores[jugadorActual].dados[1] = NumH;
                                         serepitehorm=false;
                                         break;
                                     case 3:
 
-                                        dado3=NumH;
+                                         vJugadores[jugadorActual].dados[2] = NumH;
                                         serepitehorm=false;
                                         break;
                                     case 4:
 
-                                        dado4=NumH;
+                                         vJugadores[jugadorActual].dados[3] = NumH;
                                         serepitehorm=false;
                                         break;
                                     case 5:
 
-                                        dado5=NumH;
+                                         vJugadores[jugadorActual].dados[4] = NumH;
                                         serepitehorm=false;
                                         break;
+
 
                                     default:
                                         rlutil::locate(35, 28);
@@ -1506,16 +1539,26 @@ void FaseFinal(jugadores vJugadores[2],bool& FinFF,bool& cero, int jugadorActual
 
                                         serepitehorm=true;
 
-                                        //serepitehorm es true, por lo tanto cumple con el requisito del do while, entonces se repite vuelta, esto es porque eligio mal una opcion.
+                                        ///serepitehorm es true, por lo tanto cumple con el requisito del do while, entonces se repite vuelta, esto es porque eligio mal una opcion.
 
                                         break;
+
                                 }
+
+
+
                             break;
 
+                             /// si no quiere cambiar un numero , sale del do while
                         case 2:
+
+
 
                             serepitehorm=false;
                             break;
+
+
+
                         default:
                             rlutil::locate(35, 28);
                             cout << "(opcion equivocada, elegi nuevamente)" << endl;
@@ -1530,11 +1573,22 @@ void FaseFinal(jugadores vJugadores[2],bool& FinFF,bool& cero, int jugadorActual
 
                             serepitehorm=true;
                     }
+
                     }while(serepitehorm==true);
 
 
+
+
                 }
-                //Pregunto por si el jugador tiene la bendicion aguila
+
+
+
+
+
+
+                ///Pregunto por si el jugador tiene la bendicion aguila
+                /// si tiene aguila elige la posicion de un dado para cambiar su valor
+
 
             if(BendAguila){
                 rlutil::locate(30,25);
@@ -1544,14 +1598,19 @@ void FaseFinal(jugadores vJugadores[2],bool& FinFF,bool& cero, int jugadorActual
                 rlutil::locate(30,27);
                 cout << "     2     - No" << endl;
 
-                // Usamos un do while interno que nos servira por si el jugador escoje mal un numero asi tiene la oportunidad de elegir bien (NumA = variable para la eleccion).
+                /// Usamos un do while interno que nos servira por si el jugador escoje mal un numero asi tiene la oportunidad de elegir bien (NumA = variable para la eleccion).
 
                 do{
                     rlutil::locate(30,28);
+
+                    /// es 1 o 2 , variable para elegir eleccion de dado
                     cin >> NumA;
                     borrarCin();
                     borrarCout();
+
+
                     switch (NumA) {
+
                         case 1:
                             rlutil::locate(30, 25);
                             cout << "Que dado desea cambiar (1 al 5)" << endl;
@@ -1560,24 +1619,29 @@ void FaseFinal(jugadores vJugadores[2],bool& FinFF,bool& cero, int jugadorActual
                             rlutil::locate(30, 27);
                             cout << "      Dado 4       Dado 5"<< endl;
                                 rlutil::locate(30,28);
-                                cin >> opcionAguiladado;
+
+                                /// que dado va a cambiar
+                                cin >> opcionDadoAguila;
                                 borrarCout();
                                 borrarCin();
 
-                                switch (opcionAguiladado) {
+
+                                switch (opcionDadoAguila) {
                                     case 1:
 
                                         rlutil::locate(30,25);
                                         cout << "Ingrese el valor por el que desea cambiarlo (1 al 6): ";
                                         rlutil::locate(30,28);
+
+                                       /// valor por el cual vamos a cambiar un dado a eleccion
                                         cin >> opcionAguila;
                                         borrarCin();
                                         borrarCout();
 
-                                        //Se cambia el valor del dado por un valor de preferencia.
+                                       ///Se cambia el valor del dado por un valor de preferencia.
 
                                         if(opcionAguila>0 && opcionAguila<7){
-                                            dado1=opcionAguila;
+                                            vJugadores[jugadorActual].dados[0] = opcionAguila;
                                             serepiteaguila=false;
                                         }
                                         else{
@@ -1586,7 +1650,7 @@ void FaseFinal(jugadores vJugadores[2],bool& FinFF,bool& cero, int jugadorActual
                                             Sleep(1500);
 
                                             serepiteaguila=true;
-                                            //Si elegis mal entonces por medio de serepiteaguila=true vuelve a elegir un dado
+                                            ///Si elegis mal entonces por medio de serepiteaguila=true vuelve a elegir un dado
                                         }
                                         break;
                                     case 2:
@@ -1598,7 +1662,7 @@ void FaseFinal(jugadores vJugadores[2],bool& FinFF,bool& cero, int jugadorActual
                                         borrarCout();
 
                                         if(opcionAguila>0 && opcionAguila<7){
-                                            dado2=opcionAguila;
+                                            vJugadores[jugadorActual].dados[1] = opcionAguila;
                                             serepiteaguila=false;
                                         }
                                         else{
@@ -1620,7 +1684,7 @@ void FaseFinal(jugadores vJugadores[2],bool& FinFF,bool& cero, int jugadorActual
                                         borrarCout();
 
                                         if(opcionAguila>0 && opcionAguila<7){
-                                            dado3=opcionAguila;
+                                            vJugadores[jugadorActual].dados[2] = opcionAguila;
                                             serepiteaguila=false;
                                         }
                                         else{
@@ -1640,7 +1704,7 @@ void FaseFinal(jugadores vJugadores[2],bool& FinFF,bool& cero, int jugadorActual
                                         borrarCout();
 
                                         if(opcionAguila>0 && opcionAguila<7){
-                                            dado4=opcionAguila;
+                                            vJugadores[jugadorActual].dados[3] = opcionAguila;
                                             serepiteaguila=false;
                                         }
                                         else{
@@ -1660,7 +1724,7 @@ void FaseFinal(jugadores vJugadores[2],bool& FinFF,bool& cero, int jugadorActual
                                         borrarCout();
 
                                         if(opcionAguila>0 && opcionAguila<7){
-                                            dado5=opcionAguila;
+                                            vJugadores[jugadorActual].dados[4] = opcionAguila;
                                             serepiteaguila=false;
                                         }
                                         else{
@@ -1694,8 +1758,9 @@ void FaseFinal(jugadores vJugadores[2],bool& FinFF,bool& cero, int jugadorActual
 
                     }
 
-            //Se llama a la funcion GanarFF para saber si con los dados lanzados y/o modificados se gano la partida.
+            ///Se llama a la funcion GanarFF para saber si con los dados lanzados y/o modificados se gano la partida.
 
+                ///si  gana con escalera simple
                 if(GanarFF(vJugadores,jugadorActual)){
 
                     FinalizoFF(vJugadores,cero,FinFF,jugadorActual);
@@ -1704,6 +1769,8 @@ void FaseFinal(jugadores vJugadores[2],bool& FinFF,bool& cero, int jugadorActual
                     cout << "Ganaste Fase Final con escalera" << endl;
                     Sleep(2000);
                 }
+
+                    /// si gana con escalera salamandra
                 else{
                 if(BendSalamandra){
                     if(GanarFFS(dado1, dado2, dado3, dado4, dado5)){
@@ -1719,8 +1786,12 @@ void FaseFinal(jugadores vJugadores[2],bool& FinFF,bool& cero, int jugadorActual
                     }
 
 
-                    //Se verifica si el jugador tiene la bendicion de la medusa.
+                    ///Se verifica si el jugador tiene la bendicion de la medusa.
+
+
                 else{
+
+                    /// si gana con escalera medusa
                 if(BendMedusa){
                     if(GanarFFM(dado1, dado2, dado3, dado4, dado5)){
 
@@ -1756,9 +1827,37 @@ void FinalizoFF( jugadores vJugadores[2], bool cero, bool& FinFF,int jugadorActu
     FinFF=true;
 }
 
+/*Mejorar
+
+void Reiniciar(jugadores vJugadores[2], estatuas estatuillas){
+    for(int x=0;x<2;x++){
+    vJugadores[x].puntos = 0;
+    vJugadores[x].PuntosEst=0;
+    vJugadores[x].PuntosEstMas=0;
+    vJugadores[x].PuntosEstMenos=0;
+    vJugadores[x].PuntosGan=0;
+    vJugadores[x].PuntosGanMas=0;
+    vJugadores[x].PuntosLanz=0;
+    vJugadores[x].PuntosCangrejo=0;
+    vJugadores[x].PuntosHormiga=0;
+
+    vJugadores[x].intentoCangrejo=0;
+    vJugadores[x].intentoHormiga=0;
+    vJugadores[x].intentoMedusa=0;
+    vJugadores[x].intentoAguila=0;
+    vJugadores[x].intentoSalamandra=0;
+    for(int i=0;i<5;i++){
+    vJugadores[x].vEstatuillasObtenidas[i]=false;
+    }
+    }
+    for(int p=0;p<5;p++){
+    estatuillas.vEstatuillasDisponibles[p]=true;
+    }
+
+}
 
 
-
+*/
 
 
 

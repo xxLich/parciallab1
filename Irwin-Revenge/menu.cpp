@@ -4,6 +4,7 @@
 #include "dado.h"
 #include "credito.h"
 #include "estructuras.h"
+#include "LogicaDosJugadores.h"
 
 
 using namespace std;

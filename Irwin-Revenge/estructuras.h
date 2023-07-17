@@ -51,6 +51,8 @@ struct jugadores
     int PuntosGan=0;
     int PuntosGanMas=0;
     int PuntosLanz=0;
+    int PuntosCangrejo=0;
+    int PuntosHormiga=0;
 
     int intentoCangrejo=0;
     int intentoHormiga=0;

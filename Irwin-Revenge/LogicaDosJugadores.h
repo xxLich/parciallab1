@@ -103,6 +103,8 @@ void PuntosExpedicion(int&, int&, int&, int);
 
 
 
+
+void estadisticas(int ,int ,jugadores[]);
 bool GanarFF(jugadores[],int);
 
 bool GanarFFS(int,int,int,int,int);
@@ -114,6 +116,8 @@ int EstatuillasCero(bool);
 void FinalizoFF( jugadores[], bool , bool&, int);
 
 void FaseFinal(jugadores[],bool& ,bool&, int, int&, int);
+
+void Reiniciar(jugadores[],estatuas);
 
 
 
