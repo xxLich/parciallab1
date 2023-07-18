@@ -513,7 +513,7 @@
 1689562169 c:\users\mromar95\desktop\irwin-revenge\estructuras.h
 	<string>
 
-1689559738 source:c:\users\mromar95\desktop\irwin-revenge\dos-jugadores.cpp
+1689566503 source:c:\users\mromar95\desktop\irwin-revenge\dos-jugadores.cpp
 	<iostream>
 	"mesaydados.h"
 	"rlutil.h"
@@ -552,7 +552,7 @@
 
 1689451093 c:\users\mromar95\desktop\irwin-revenge\reglas.h
 
-1689565363 source:c:\users\mromar95\desktop\irwin-revenge\menu.cpp
+1689566503 source:c:\users\mromar95\desktop\irwin-revenge\menu.cpp
 	<iostream>
 	"rlutil.h"
 	"Menu.h"
@@ -583,7 +583,7 @@
 	"lab.h"
 	"Menu.h"
 
-1689565316 source:c:\users\mromar95\desktop\irwin-revenge\logica-dos-jugadores.cpp
+1689644720 source:c:\users\mromar95\desktop\irwin-revenge\logica-dos-jugadores.cpp
 	<iostream>
 	"dado.h"
 	"mesaydados.h"

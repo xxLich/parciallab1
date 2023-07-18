@@ -1361,7 +1361,8 @@ bool GanarFF(jugadores vJugadores[2],int jugadorActual){
 
 
 
-    if(d1!=d2 && d1!=d3 && d1!=d4 && d1!=d5 && d2!=d3 && d2!=d4 && d2!=d5 && d3!=d4 && d3!=d5 && d4!=d5){
+    if((d1!=d2 && d1!=d3 && d1!=d4 && d1!=d5 && d2!=d3 && d2!=d4 && d2!=d5 && d3!=d4 && d3!=d5 && d4!=d5)&&(d1==2 || d2==2 || d3==2 || d4==2 || d5==2)&&
+       (d1==3 || d2==3 || d3==3 || d4==3 || d5==3)&&(d1==4 || d2==4 || d3==4 || d4==4 || d5==4)&&(d1==5 || d2==5 || d3==5 || d4==5 || d5==5)){
         return 1;
     }
     return 0;
@@ -1371,10 +1372,18 @@ bool GanarFF(jugadores vJugadores[2],int jugadorActual){
 
 
 
-bool GanarFFS(int d1 , int d2 , int d3 , int d4 , int d5){
+bool GanarFFS(jugadores vJugadores[2],int jugadorActual){
+
+    int d1=vJugadores[jugadorActual].dados[0],
+    d2=vJugadores[jugadorActual].dados[1],
+    d3=vJugadores[jugadorActual].dados[2],
+    d4=vJugadores[jugadorActual].dados[3],
+    d5=vJugadores[jugadorActual].dados[4];
+
     if((d1!=d2 && d1!=d3 && d1!=d4 && d2!=d3 && d2!=d4 && d3!=d4) ||
        (d1!=d2 && d1!=d3 && d1!=d5 && d2!=d3 && d2!=d5 && d3!=d5) || (d1!=d2 && d1!=d5 && d1!=d4 && d2!=d5 && d2!=d4 && d5!=d4) ||
-       (d1!=d5 && d1!=d3 && d1!=d4 && d5!=d3 && d5!=d4 && d3!=d4) || (d5!=d2 && d5!=d3 && d5!=d4 && d2!=d3 && d2!=d4 && d3!=d4)){
+       (d1!=d5 && d1!=d3 && d1!=d4 && d5!=d3 && d5!=d4 && d3!=d4) || (d5!=d2 && d5!=d3 && d5!=d4 && d2!=d3 && d2!=d4 && d3!=d4)&&
+       (d1==3 || d2==3 || d3==3 || d4==3 || d5==3)&&(d1==4 || d2==4 || d3==4 || d4==4 || d5==4)){
         return 1;
     }
     return 0;
@@ -1382,7 +1391,14 @@ bool GanarFFS(int d1 , int d2 , int d3 , int d4 , int d5){
 
 //ESCALERA TIPO MEDUSA
 
-bool GanarFFM(int d1 , int d2 , int d3 , int d4 , int d5){
+bool GanarFFM(jugadores vJugadores[2],int jugadorActual){
+
+    int d1=vJugadores[jugadorActual].dados[0],
+    d2=vJugadores[jugadorActual].dados[1],
+    d3=vJugadores[jugadorActual].dados[2],
+    d4=vJugadores[jugadorActual].dados[3],
+    d5=vJugadores[jugadorActual].dados[4];
+
     if(d1==d2 && d2==d3 && d3==d4 && d4==d5){
         return 1;
     }
@@ -1773,7 +1789,7 @@ void FaseFinal(jugadores vJugadores[2],bool& FinFF,bool& cero, int jugadorActual
                     /// si gana con escalera salamandra
                 else{
                 if(BendSalamandra){
-                    if(GanarFFS(dado1, dado2, dado3, dado4, dado5)){
+                    if(GanarFFS(vJugadores,jugadorActual)){
 
 
                         FinalizoFF(vJugadores,cero,FinFF,jugadorActual);
@@ -1793,7 +1809,7 @@ void FaseFinal(jugadores vJugadores[2],bool& FinFF,bool& cero, int jugadorActual
 
                     /// si gana con escalera medusa
                 if(BendMedusa){
-                    if(GanarFFM(dado1, dado2, dado3, dado4, dado5)){
+                    if(GanarFFM(vJugadores,jugadorActual)){
 
                         FinalizoFF(vJugadores,cero,FinFF,jugadorActual);
 
