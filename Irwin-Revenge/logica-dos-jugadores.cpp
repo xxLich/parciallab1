@@ -1542,16 +1542,17 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
 
             for(int i=0; i<5-1; i++)
             {
+                if(dados[i]!=dados[i+1]){
+                    if(dados[i+1]== dados[i]+1)
+                    {
+                        contEscalera++;
+                    }
+                    else
+                    {
 
-                if(dados[i+1]== dados[i]+1)
-                {
-                    contEscalera++;
-                }
-                else
-                {
+                        break;
 
-                    break;
-
+                    }
                 }
             }
 
@@ -2109,6 +2110,8 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
             }
             vJugadores[0].rondas = 1;
             vJugadores[1].rondas = 1;
+
+
 
         }
 

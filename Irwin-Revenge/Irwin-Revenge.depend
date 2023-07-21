@@ -450,7 +450,7 @@
 	"rlutil.h"
 	"reglas.h"
 
-1689957986 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\logica-dos-jugadores.cpp
+1689960982 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\logica-dos-jugadores.cpp
 	<iostream>
 	"dado.h"
 	"mesaydados.h"
