@@ -313,7 +313,7 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
 
                     borrarCout();
                     rlutil::locate(30,25);
-                    cout<<" Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+                    cout<<" Ganaste la estatuilla: "<< estatuillas.vEstatuillas[seleccion];
                     PuntosExpedicion(vJugadores[jugadorActual].PuntosEst, vJugadores[jugadorActual].PuntosEstMas, vJugadores[jugadorRival].PuntosEstMenos, vJugadores[jugadorActual].intentoCangrejo);
                     Sleep(1000);
 
@@ -330,7 +330,7 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
                     borrarCout();
                     vJugadores[jugadorActual].PuntosCangrejo -= vJugadores[jugadorRival].dados[0];
                     rlutil::locate(30,25);
-                    cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0]<< " puntos "<<" al jugador "<<vJugadores[jugadorActual].nombre;
+                    cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0]<< " puntos "<<"al jugador "<<vJugadores[jugadorActual].nombre;
 
                     Sleep(1500);
 
@@ -358,7 +358,7 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
 
                     borrarCout();
                     rlutil::locate(30,25);
-                    cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+                    cout<<"Ganaste la estatuilla: "<< estatuillas.vEstatuillas[seleccion];
                     PuntosExpedicion(vJugadores[jugadorActual].PuntosEst, vJugadores[jugadorActual].PuntosEstMas, vJugadores[jugadorRival].PuntosEstMenos, vJugadores[jugadorActual].intentoHormiga);
                     Sleep(1000);
 
@@ -375,7 +375,7 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
                     borrarCout();
                     vJugadores[jugadorActual].PuntosHormiga -= ( vJugadores[jugadorRival].dados[0] + vJugadores[jugadorRival].dados[1]);
                     rlutil::locate(30,25);
-                    cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0] + vJugadores[jugadorRival].dados[1] << " puntos "<<" al jugador "<<vJugadores[jugadorActual].nombre;
+                    cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0] + vJugadores[jugadorRival].dados[1] << " puntos "<<"al jugador "<<vJugadores[jugadorActual].nombre;
 
                     Sleep(1500);
 
@@ -405,7 +405,7 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
 
                     borrarCout();
                     rlutil::locate(30,25);
-                    cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+                    cout<<"Ganaste la estatuilla: "<< estatuillas.vEstatuillas[seleccion];
                     PuntosExpedicion(vJugadores[jugadorActual].PuntosEst, vJugadores[jugadorActual].PuntosEstMas, vJugadores[jugadorRival].PuntosEstMenos, vJugadores[jugadorActual].intentoMedusa);
                     Sleep(1000);
 
@@ -437,7 +437,7 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
 
                     borrarCout();
                     rlutil::locate(30,25);
-                    cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+                    cout<<"Ganaste la estatuilla: "<< estatuillas.vEstatuillas[seleccion];
                     PuntosExpedicion(vJugadores[jugadorActual].PuntosEst, vJugadores[jugadorActual].PuntosEstMas, vJugadores[jugadorRival].PuntosEstMenos, vJugadores[jugadorActual].intentoAguila);
                     Sleep(1000);
 
@@ -511,7 +511,7 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
 
                     borrarCout();
                     rlutil::locate(30,25);
-                    cout<<" Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+                    cout<<" Ganaste la estatuilla: "<< estatuillas.vEstatuillas[seleccion];
                     PuntosExpedicion(vJugadores[jugadorActual].PuntosEst, vJugadores[jugadorActual].PuntosEstMas, vJugadores[jugadorRival].PuntosEstMenos, vJugadores[jugadorActual].intentoCangrejo);
                     Sleep(1000);
 
@@ -531,7 +531,7 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
                     borrarCout();
                     vJugadores[jugadorActual].PuntosCangrejo -= vJugadores[jugadorRival].dados[0];
                     rlutil::locate(30,25);
-                    cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0]<< " puntos "<<" al jugador "<<vJugadores[jugadorActual].nombre;
+                    cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0]<< " puntos "<<"al jugador "<<vJugadores[jugadorActual].nombre;
 
                     Sleep(1500);
 
@@ -558,7 +558,7 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
 
                     borrarCout();
                     rlutil::locate(30,25);
-                    cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+                    cout<<"Ganaste la estatuilla: "<< estatuillas.vEstatuillas[seleccion];
                     PuntosExpedicion(vJugadores[jugadorActual].PuntosEst, vJugadores[jugadorActual].PuntosEstMas, vJugadores[jugadorRival].PuntosEstMenos, vJugadores[jugadorActual].intentoHormiga);
                     Sleep(1000);
 
@@ -575,7 +575,7 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
                     borrarCout();
                     vJugadores[jugadorActual].PuntosHormiga -= ( vJugadores[jugadorRival].dados[0] + vJugadores[jugadorRival].dados[1]);
                     rlutil::locate(30,25);
-                    cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0] + vJugadores[jugadorRival].dados[1] << " puntos "<<" al jugador "<<vJugadores[jugadorActual].nombre;
+                    cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0] + vJugadores[jugadorRival].dados[1] << " puntos "<<"al jugador "<<vJugadores[jugadorActual].nombre;
 
                     Sleep(1500);
 
@@ -609,7 +609,7 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
 
                     borrarCout();
                     rlutil::locate(30,25);
-                    cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+                    cout<<"Ganaste la estatuilla: "<< estatuillas.vEstatuillas[seleccion];
                     PuntosExpedicion(vJugadores[jugadorActual].PuntosEst, vJugadores[jugadorActual].PuntosEstMas, vJugadores[jugadorRival].PuntosEstMenos, vJugadores[jugadorActual].intentoMedusa);
                     Sleep(1000);
 
@@ -640,7 +640,7 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
 
                     borrarCout();
                     rlutil::locate(30,25);
-                    cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+                    cout<<"Ganaste la estatuilla: "<< estatuillas.vEstatuillas[seleccion];
                     PuntosExpedicion(vJugadores[jugadorActual].PuntosEst, vJugadores[jugadorActual].PuntosEstMas, vJugadores[jugadorRival].PuntosEstMenos, vJugadores[jugadorActual].intentoAguila);
                     Sleep(1000);
 
@@ -669,7 +669,7 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
 
                     borrarCout();
                     rlutil::locate(30,25);
-                    cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+                    cout<<"Ganaste la estatuilla: "<< estatuillas.vEstatuillas[seleccion];
                     PuntosExpedicion(vJugadores[jugadorActual].PuntosEst, vJugadores[jugadorActual].PuntosEstMas, vJugadores[jugadorRival].PuntosEstMenos, vJugadores[jugadorActual].intentoSalamandra);
                     Sleep(1000);
 
@@ -837,10 +837,10 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
             cout<<"            ";
 
             rlutil::locate(3,2);
-            cout<<"JUGADOR : " <<vJugadores[1].nombre;
+            cout<<"JUGADOR: " <<vJugadores[1].nombre;
 
             rlutil::locate(20,3);
-            cout<<"ESTATUILLAS OBTENIDAS : ";
+            cout<<"ESTATUILLAS OBTENIDAS: ";
 
             for(int i=0; i<5; i++)
             {
@@ -877,10 +877,10 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
             cout<<"             ";
 
             rlutil::locate(3,2);
-            cout<<"JUGADOR : " <<vJugadores[0].nombre;
+            cout<<"JUGADOR: " <<vJugadores[0].nombre;
 
             rlutil::locate(20,3);
-            cout<<"ESTATUILLAS OBTENIDAS : ";
+            cout<<"ESTATUILLAS OBTENIDAS: ";
 
             for(int i=0; i<5; i++)
             {
@@ -1056,7 +1056,7 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
 
                         borrarCout();
                         rlutil::locate(30,25);
-                        cout<<"Seleccionaste la estatuilla : "<<estatuillas.vEstatuillas[0];
+                        cout<<"Seleccionaste la estatuilla: "<<estatuillas.vEstatuillas[0];
                         Sleep(1000);
                         borrarCout();
                         borrarCin();
@@ -1068,12 +1068,12 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
 
                         borrarCout();
                         rlutil::locate(30,25);
-                        cout<<"estatuilla no disponible";
+                        cout<<"Estatuilla no disponible";
                         Sleep(1000);
 
                         borrarCout();
                         rlutil::locate(30,25);
-                        cout<<"seleccione otra";
+                        cout<<"Seleccione otra";
 
                     }
 
@@ -1086,7 +1086,7 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
 
                         borrarCout();
                         rlutil::locate(30,25);
-                        cout<<"Seleccionaste la estatuilla : "<<estatuillas.vEstatuillas[1];
+                        cout<<"Seleccionaste la estatuilla: "<<estatuillas.vEstatuillas[1];
                         Sleep(1000);
                         borrarCout();
                         borrarCin();
@@ -1098,11 +1098,11 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
 
                         borrarCout();
                         rlutil::locate(30,25);
-                        cout<<"estatuilla no disponible";
+                        cout<<"Estatuilla no disponible";
                         Sleep(1000);
                         borrarCout();
                         rlutil::locate(30,25);
-                        cout<<"seleccione otra";
+                        cout<<"Seleccione otra";
 
                     }
 
@@ -1117,7 +1117,7 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
 
                         borrarCout();
                         rlutil::locate(30,25);
-                        cout<<"Seleccionaste la estatuilla : "<<estatuillas.vEstatuillas[2];
+                        cout<<"Seleccionaste la estatuilla: "<<estatuillas.vEstatuillas[2];
                         Sleep(1000);
                         borrarCout();
                         borrarCin();
@@ -1129,11 +1129,11 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
 
                         borrarCout();
                         rlutil::locate(30,25);
-                        cout<<"estatuilla no disponible";
+                        cout<<"Estatuilla no disponible";
                         Sleep(1000);
                         borrarCout();
                         rlutil::locate(30,25);
-                        cout<<"seleccione otra";
+                        cout<<"Seleccione otra";
 
                     }
 
@@ -1150,7 +1150,7 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
 
                         borrarCout();
                         rlutil::locate(30,25);
-                        cout<<"Seleccionaste la estatuilla : "<<estatuillas.vEstatuillas[3];
+                        cout<<"Seleccionaste la estatuilla: "<<estatuillas.vEstatuillas[3];
                         Sleep(1000);
                         borrarCout();
                         borrarCin();
@@ -1162,11 +1162,11 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
 
                         borrarCout();
                         rlutil::locate(30,25);
-                        cout<<"estatuilla no disponible";
+                        cout<<"Estatuilla no disponible";
                         Sleep(1000);
                         borrarCout();
                         rlutil::locate(30,25);
-                        cout<<"seleccione otra";
+                        cout<<"Seleccione otra";
 
                     }
 
@@ -1181,7 +1181,7 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
 
                         borrarCout();
                         rlutil::locate(30,25);
-                        cout<<"Seleccionaste la estatuilla : "<<estatuillas.vEstatuillas[4];
+                        cout<<"Seleccionaste la estatuilla: "<<estatuillas.vEstatuillas[4];
                         Sleep(1000);
                         borrarCout();
                         borrarCin();
@@ -1194,11 +1194,11 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
 
                         borrarCout();
                         rlutil::locate(30,25);
-                        cout<<"estatuilla no disponible";
+                        cout<<"Estatuilla no disponible";
                         Sleep(1000);
                         borrarCout();
                         rlutil::locate(30,25);
-                        cout<<"seleccione otra";
+                        cout<<"Seleccione otra";
                         Sleep(1000);
 
                     }
@@ -1312,6 +1312,10 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
                 if(vJugadores[0].dados[0]<vJugadores[1].dados[0])
                 {
 
+                    borrarCout();
+                    rlutil::locate(30,25);
+                    cout<<"Empieza el jugador: "<<vJugadores[0].nombre;
+                    Sleep(1500);
                     salir = true;
                     system("cls");
                 }
@@ -1324,6 +1328,10 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
                     vJugadores[0].nombre = vJugadores[1].nombre;
                     vJugadores[1].nombre = nAux;
 
+                    borrarCout();
+                    rlutil::locate(30,25);
+                    cout<<"Empieza el jugador: "<<vJugadores[0].nombre;
+                    Sleep(1500);
                     salir = true;
                     system("cls");
                 }
@@ -2099,6 +2107,8 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
             for(int p=0;p<5;p++){
             estatuillas.vEstatuillasDisponibles[p]=true;
             }
+            vJugadores[0].rondas = 1;
+            vJugadores[1].rondas = 1;
 
         }
 

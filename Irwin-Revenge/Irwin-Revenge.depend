@@ -416,7 +416,7 @@
 	"lab.h"
 	"Menu.h"
 
-1689903187 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\logicalab.cpp
+1689957288 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\logicalab.cpp
 	<iostream>
 	"mesaydados.h"
 	"rlutil.h"
@@ -450,7 +450,7 @@
 	"rlutil.h"
 	"reglas.h"
 
-1689954929 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\logica-dos-jugadores.cpp
+1689957986 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\logica-dos-jugadores.cpp
 	<iostream>
 	"dado.h"
 	"mesaydados.h"

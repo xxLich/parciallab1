@@ -54,7 +54,7 @@ void jugarPorTurnoLab(jugadores vJugadores[2], estatuas& estatuillas)
 
             borrarCout();
             rlutil::locate(30,25);
-            cout<<"empieza el jugador :"<<vJugadores[0].nombre;
+            cout<<"Empieza el jugador: "<<vJugadores[0].nombre;
             Sleep(1500);
             salir = true;
             system("cls");
@@ -74,8 +74,8 @@ void jugarPorTurnoLab(jugadores vJugadores[2], estatuas& estatuillas)
 
              borrarCout();
             rlutil::locate(30,25);
-             cout<<"empieza el jugador :"<<vJugadores[0].nombre;
-             Sleep(1500);
+            cout<<"Empieza el jugador: "<<vJugadores[0].nombre;
+            Sleep(1500);
             salir = true;
             system("cls");
         }
@@ -305,7 +305,7 @@ void evaluarSeleccionTresDadosLab(int seleccion,int jugadorActual,jugadores vJug
 
             borrarCout();
             rlutil::locate(30,25);
-            cout<<" Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            cout<<" Ganaste la estatuilla: "<< estatuillas.vEstatuillas[seleccion];
             PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoCangrejo);
             Sleep(1500);
 
@@ -322,7 +322,7 @@ void evaluarSeleccionTresDadosLab(int seleccion,int jugadorActual,jugadores vJug
             borrarCout();
             vJugadores[jugadorActual].PuntosCangrejo -= vJugadores[jugadorRival].dados[0];
             rlutil::locate(30,25);
-            cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0]<< " puntos "<<" al jugador "<<vJugadores[jugadorActual].nombre;
+            cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0]<< " puntos "<<"al jugador "<<vJugadores[jugadorActual].nombre;
 
             Sleep(1500);
 
@@ -352,7 +352,7 @@ void evaluarSeleccionTresDadosLab(int seleccion,int jugadorActual,jugadores vJug
 
             borrarCout();
             rlutil::locate(30,25);
-            cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            cout<<"Ganaste la estatuilla: "<< estatuillas.vEstatuillas[seleccion];
             PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoHormiga);
             Sleep(1500);
 
@@ -369,7 +369,7 @@ void evaluarSeleccionTresDadosLab(int seleccion,int jugadorActual,jugadores vJug
             borrarCout();
             vJugadores[jugadorActual].PuntosHormiga -= ( vJugadores[jugadorRival].dados[0] + vJugadores[jugadorRival].dados[1]);
             rlutil::locate(30,25);
-            cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0] + vJugadores[jugadorRival].dados[1] << " puntos "<<" al jugador "<<vJugadores[jugadorActual].nombre;
+            cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0] + vJugadores[jugadorRival].dados[1] << " puntos "<<"al jugador "<<vJugadores[jugadorActual].nombre;
 
             Sleep(1500);
 
@@ -400,7 +400,7 @@ void evaluarSeleccionTresDadosLab(int seleccion,int jugadorActual,jugadores vJug
 
             borrarCout();
             rlutil::locate(30,25);
-            cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            cout<<"Ganaste la estatuilla: "<< estatuillas.vEstatuillas[seleccion];
             PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoMedusa);
 
             Sleep(1000);
@@ -432,7 +432,7 @@ void evaluarSeleccionTresDadosLab(int seleccion,int jugadorActual,jugadores vJug
 
             borrarCout();
             rlutil::locate(30,25);
-            cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            cout<<"Ganaste la estatuilla: "<< estatuillas.vEstatuillas[seleccion];
             PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoAguila);
 
             Sleep(1000);
@@ -535,7 +535,7 @@ void evaluarSeleccionDosDadosLab(int seleccion,int jugadorActual,jugadores vJuga
 
             borrarCout();
             rlutil::locate(30,25);
-            cout<<" Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            cout<<" Ganaste la estatuilla: "<< estatuillas.vEstatuillas[seleccion];
             PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoCangrejo);
 
             Sleep(1500);
@@ -556,7 +556,7 @@ void evaluarSeleccionDosDadosLab(int seleccion,int jugadorActual,jugadores vJuga
             borrarCout();
             vJugadores[jugadorActual].PuntosCangrejo -= vJugadores[jugadorRival].dados[0];
             rlutil::locate(30,25);
-            cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0]<< " puntos "<<" al jugador "<<vJugadores[jugadorActual].nombre;
+            cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0]<< " puntos "<<"al jugador "<<vJugadores[jugadorActual].nombre;
 
             Sleep(1500);
 
@@ -583,7 +583,7 @@ void evaluarSeleccionDosDadosLab(int seleccion,int jugadorActual,jugadores vJuga
 
             borrarCout();
             rlutil::locate(30,25);
-            cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            cout<<"Ganaste la estatuilla: "<< estatuillas.vEstatuillas[seleccion];
             PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoHormiga);
 
             Sleep(1500);
@@ -600,7 +600,7 @@ void evaluarSeleccionDosDadosLab(int seleccion,int jugadorActual,jugadores vJuga
             borrarCout();
             vJugadores[jugadorActual].PuntosHormiga -= ( vJugadores[jugadorRival].dados[0] + vJugadores[jugadorRival].dados[1]);
             rlutil::locate(30,25);
-            cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0] + vJugadores[jugadorRival].dados[1] << " puntos "<<" al jugador "<<vJugadores[jugadorActual].nombre;
+            cout<<"Se le descontaron "<<vJugadores[jugadorRival].dados[0] + vJugadores[jugadorRival].dados[1] << " puntos "<<"al jugador "<<vJugadores[jugadorActual].nombre;
 
             Sleep(1500);
 
@@ -634,7 +634,7 @@ void evaluarSeleccionDosDadosLab(int seleccion,int jugadorActual,jugadores vJuga
 
             borrarCout();
             rlutil::locate(30,25);
-            cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            cout<<"Ganaste la estatuilla: "<< estatuillas.vEstatuillas[seleccion];
             PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoMedusa);
 
             Sleep(1000);
@@ -666,7 +666,7 @@ void evaluarSeleccionDosDadosLab(int seleccion,int jugadorActual,jugadores vJuga
 
             borrarCout();
             rlutil::locate(30,25);
-            cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            cout<<"Ganaste la estatuilla: "<< estatuillas.vEstatuillas[seleccion];
             PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoAguila);
 
             Sleep(1000);
@@ -696,7 +696,7 @@ void evaluarSeleccionDosDadosLab(int seleccion,int jugadorActual,jugadores vJuga
 
             borrarCout();
             rlutil::locate(30,25);
-            cout<<"Ganaste la estatuilla :"<< estatuillas.vEstatuillas[seleccion];
+            cout<<"Ganaste la estatuilla: "<< estatuillas.vEstatuillas[seleccion];
             PuntosExpedicion(vJugadores[jugadorActual].PuntosEst , vJugadores[jugadorActual].PuntosEstMas , vJugadores[jugadorRival].PuntosEstMenos , vJugadores[jugadorActual].intentoSalamandra);
 
             Sleep(1000);
