@@ -338,21 +338,22 @@
 	"rlutil.h"
 	"reglas.h"
 
-1689444863 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\creditos.cpp
+1689903187 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\creditos.cpp
 	<iostream>
 	<chrono>
 	<thread>
 	"credito.h"
+	"rlutil.h"
 
-1689444863 c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\credito.h
+1689903187 c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\credito.h
 
-1689444863 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\dados.cpp
+1689903187 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\dados.cpp
 	<iostream>
 	"rlutil.h"
 	"Menu.h"
 	"dado.h"
 
-1689444863 c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\rlutil.h
+1689903187 c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\rlutil.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -366,7 +367,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1689444863 c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\menu.h
+1689903187 c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\menu.h
 	<iostream>
 	"rlutil.h"
 	"Menu.h"
@@ -374,12 +375,12 @@
 	<string>
 	"estructuras.h"
 
-1689444863 c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\dado.h
+1689903187 c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\dado.h
 
-1689444863 c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\estructuras.h
+1689903187 c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\estructuras.h
 	<string>
 
-1689450440 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\dos-jugadores.cpp
+1689903187 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\dos-jugadores.cpp
 	<iostream>
 	"mesaydados.h"
 	"rlutil.h"
@@ -388,25 +389,34 @@
 	"lab.h"
 	"Menu.h"
 
-1689444863 c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\mesaydados.h
+1689903187 c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\mesaydados.h
 	"estructuras.h"
 
-1689444863 c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\logicadosjugadores.h
-	"estructuras.h"
-	<string>
-
-1689444863 c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\lab.h
+1689955368 c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\logicadosjugadores.h
 	"estructuras.h"
 	<string>
 
-1689444863 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\funcionesmesaydados.cpp
+1689903187 c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\lab.h
+	"estructuras.h"
+	<string>
+
+1689903187 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\funcionesmesaydados.cpp
 	<iostream>
 	"mesaydados.h"
 	"rlutil.h"
 	"dado.h"
 	"estructuras.h"
 
-1689445769 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\lab.cpp
+1689903187 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\lab.cpp
+	<iostream>
+	"mesaydados.h"
+	"rlutil.h"
+	"estructuras.h"
+	"LogicaDosJugadores.h"
+	"lab.h"
+	"Menu.h"
+
+1689903187 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\logicalab.cpp
 	<iostream>
 	"mesaydados.h"
 	"rlutil.h"
@@ -414,15 +424,7 @@
 	"LogicaDosJugadores.h"
 	"lab.h"
 
-1689444863 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\logicalab.cpp
-	<iostream>
-	"mesaydados.h"
-	"rlutil.h"
-	"estructuras.h"
-	"LogicaDosJugadores.h"
-	"lab.h"
-
-1689444863 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\main.cpp
+1689903187 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\main.cpp
 	<iostream>
 	"rlutil.h"
 	"Menu.h"
@@ -432,22 +434,23 @@
 	"estructuras.h"
 	<string>
 
-1689444863 c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\reglas.h
+1689903187 c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\reglas.h
 
-1689445872 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\menu.cpp
+1689955368 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\menu.cpp
 	<iostream>
 	"rlutil.h"
 	"Menu.h"
 	"dado.h"
 	"credito.h"
 	"estructuras.h"
+	"LogicaDosJugadores.h"
 
-1689444863 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\reglas.cpp
+1689903187 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\reglas.cpp
 	<iostream>
 	"rlutil.h"
 	"reglas.h"
 
-1689450927 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\logica-dos-jugadores.cpp
+1689954929 source:c:\users\mromar95\desktop\irwin's revenge\parciallab1-main\irwin-revenge\logica-dos-jugadores.cpp
 	<iostream>
 	"dado.h"
 	"mesaydados.h"
@@ -458,6 +461,8 @@
 	"LogicaDosJugadores.h"
 	<string>
 	<windows.h>
+	"Menu.h"
+	"lab.h"
 
 1689899235 source:c:\users\ivana\desktop\irwin-revenge\dos-jugadores.cpp
 	<iostream>

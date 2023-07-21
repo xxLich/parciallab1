@@ -118,7 +118,7 @@ void FinalizoFF( jugadores[], bool , bool&, int);
 
 void FaseFinal(jugadores[],bool& ,bool&, int, int&, int);
 
-void Reiniciar(jugadores[],estatuas);
+void Reiniciar(jugadores[],estatuas&);
 
 
 

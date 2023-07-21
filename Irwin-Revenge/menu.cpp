@@ -106,7 +106,7 @@ int selectOpciones(int &P, int pY, int &salir,jugadores vJugadores[2], estatuas&
 
             /// 2 JUGADORES
             case 0:
-
+                Reiniciar(vJugadores,estatuillas);
                dosJugadores(vJugadores,estatuillas);
 
                 break;

@@ -2073,9 +2073,9 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
             FinFF=true;
         }
 
-        /*Mejorar
 
-        void Reiniciar(jugadores vJugadores[2], estatuas estatuillas){
+
+        void Reiniciar(jugadores vJugadores[2], estatuas& estatuillas){
             for(int x=0;x<2;x++){
             vJugadores[x].puntos = 0;
             vJugadores[x].PuntosEst=0;
@@ -2103,7 +2103,6 @@ void Jugadores(int posX,int posY,jugadores vJugadores[2])
         }
 
 
-        */
 
 
 
